@@ -22,5 +22,6 @@
 - Use oauth for authentication to all socialmedia platforms
 - Auto categorize using AI
 - Study diff between pg and mysql here https://x.com/hnasr/status/1859366187534254274
-- Add analytics 
-- ⁠Think about scaling (watch the shortened link video)
+- Add analytics
+- Think about scaling (watch the shortened link video)
+- Hero section [example1](https://21st.dev/nubmaster4568/hero-section-nexus/demo-home-page)
