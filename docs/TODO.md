@@ -10,6 +10,10 @@
   - redis
   - docker-compose
 
+## later
+
+- [ ] [bitly](https://www.youtube.com/watch?v=qSJAvd5Mgio)
+
 ---
 
 - Testing for the backend

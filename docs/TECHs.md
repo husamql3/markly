@@ -18,6 +18,7 @@
   - Rate limits
   - XSS attacks
   - SQL injection
+- [Pino](https://getpino.io)
 
 ### DevOps & Tools
 
@@ -27,3 +28,6 @@
 - Docker
 - Use precommit (for build)
 - T3 Env
+
+- PostHog (heavy analytics)
+- Sentry (error tracking)
