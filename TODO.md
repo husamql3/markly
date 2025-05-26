@@ -25,4 +25,5 @@
 - Add analytics
 - shorten links & share collection or smth
 - Think about scaling (watch the shortened link video)
+- add search function
 - Hero section [example1](https://21st.dev/nubmaster4568/hero-section-nexus/demo-home-page)
