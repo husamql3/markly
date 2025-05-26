@@ -1,22 +1,16 @@
-## Techs
-
-- React
-- Node
-- TypeScript
-- Docker
-- Redis
-- SQL `mysql2` (or whatever can be deployed on cloudflare worker)
-- Cloudflare
-- Try a new gh actions
-- Use biome (instead of prettier)
-- Use oxc (instead of eslint) [line](https://github.com/oxc-project/oxc)
-- Security
-  - Rate limits
-  - Xss attacks
-  - Sql injection
-- Use precommit (for build)
-
 ## TODO
+
+- [ ] sqlite
+- [ ] [cloudflare fundamentals](https://developers.cloudflare.com/fundamentals/)
+- [ ] [worker concept](https://developers.cloudflare.com/workers/)
+- [ ] project structure
+  - mono repo - pkgs
+  - t3 env
+  - wrangler
+  - redis
+  - docker-compose
+
+---
 
 - Testing for the backend
 - Use oauth for authentication to all socialmedia platforms
@@ -27,3 +21,4 @@
 - Think about scaling (watch the shortened link video)
 - add search function
 - Hero section [example1](https://21st.dev/nubmaster4568/hero-section-nexus/demo-home-page)
+- X - https://developer.twitter.com/apitools/api?endpoint=/2/users/%7Bid%7D/bookmarks&method=post
