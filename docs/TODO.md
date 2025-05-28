@@ -26,3 +26,5 @@
 - add search function
 - Hero section [example1](https://21st.dev/nubmaster4568/hero-section-nexus/demo-home-page)
 - X - https://developer.twitter.com/apitools/api?endpoint=/2/users/%7Bid%7D/bookmarks&method=post
+- Error parsing https://x.com/haydenbleasel/status/1927033002464251904?s=48
+- TypeScript utility types https://x.com/karabharat/status/1927037592249250007?s=48
