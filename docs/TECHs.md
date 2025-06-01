@@ -6,6 +6,7 @@
 - TailwindCSS
 - ReactQuery
 - nuqs (if needed)
+- tweakcn
 
 ### Server
 
@@ -28,6 +29,7 @@
 - Docker
 - Use precommit (for build)
 - T3 Env
+- husky - check new hooks
 
 - PostHog (heavy analytics)
 - Sentry (error tracking)

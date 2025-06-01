@@ -15,6 +15,24 @@
 - [ ] [bitly](https://www.youtube.com/watch?v=qSJAvd5Mgio)
 - [ ] UI have the full width, children take the inner width (ref: shadcn docs)
 
+## structure
+
+- [main opennextjs-aws](https://github.com/opennextjs/opennextjs-aws)
+  - changeset
+  - pnpmworkspace
+  - turbo
+  - CNAME
+  - packages:
+    - client
+    - server
+    - db
+    - utils
+    - cmd
+    - kv
+- [t3-env](https://github.com/t3-oss/t3-env)
+- [sst](https://github.com/sst/sst)
+- `.node-version`
+
 ---
 
 - Testing for the backend
