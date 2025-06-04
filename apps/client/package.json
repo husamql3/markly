@@ -1,29 +1,35 @@
 {
 	"name": "client",
-	"version": "0.0.0",
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"build": "next build",
-		"dev": "next dev --turbopack",
-		"start": "next start",
+		"build": "react-router build",
+		"dev": "react-router dev",
+		"start": "react-router-serve ./build/server/index.js",
+		"typecheck": "react-router typegen && tsc",
 		"check": "biome check --write .",
 		"format": "biome format --write ."
 	},
 	"dependencies": {
-		"jiti": "^2.4.2",
-		"next": "15.3.3",
-		"react": "19.1.0",
-		"react-dom": "19.1.0"
+		"@react-router/node": "^7.5.3",
+		"@react-router/serve": "^7.5.3",
+		"isbot": "^5.1.27",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"react-router": "^7.5.3"
 	},
 	"devDependencies": {
 		"@markly/typescript-config": "workspace:*",
 		"@next/eslint-plugin-next": "15.3.3",
-		"@types/node": "^20.11.24",
-		"@types/react": "19.1.6",
-		"@types/react-dom": "19.1.6",
-		"eslint": "^8.57.0",
-		"typescript": "5.5.4"
+		"@react-router/dev": "^7.5.3",
+		"@tailwindcss/vite": "^4.1.4",
+		"@types/node": "^20",
+		"@types/react": "^19.1.2",
+		"@types/react-dom": "^19.1.2",
+		"tailwindcss": "^4.1.4",
+		"typescript": "^5.8.3",
+		"vite": "^6.3.3",
+		"vite-tsconfig-paths": "^5.1.4"
 	},
 	"pnpm": {
 		"overrides": {
