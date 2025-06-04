@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc && tsc-alias",
-    "clean": "rm -rf dist",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "nodemon --exec \"tsx ./src/index.ts\" -e .ts",
     "start": "node ./dist/index.js",
     "test": "jest --detectOpenHandles",
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@markly/utils": "workspace:*",
+    "@markly/lib": "workspace:*",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.18.3",
