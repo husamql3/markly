@@ -5,5 +5,5 @@ const port = process.env.PORT || 8080;
 const server = createServer();
 
 server.listen(port, () => {
-  log(`server running on ${port}`);
+  log.debug(`http://localhost:${port}/`);
 });
