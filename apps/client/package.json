@@ -5,8 +5,9 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "lint": "eslint . --max-warnings 0",
-    "start": "next start"
+    "start": "next start",
+    "check": "biome check --write .",
+    "format": "biome format --write ."
   },
   "dependencies": {
     "next": "^14.1.1",

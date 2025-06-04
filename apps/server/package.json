@@ -6,15 +6,16 @@
     "build": "tsc",
     "clean": "rm -rf dist",
     "dev": "nodemon --exec \"node -r esbuild-register ./src/index.ts\" -e .ts",
-    "lint": "tsc --noEmit && eslint \"src/**/*.ts*\" --max-warnings 0",
     "start": "node -r esbuild-register ./src/index.ts",
-    "test": "jest --detectOpenHandles"
+    "test": "jest --detectOpenHandles",
+    "check": "biome check --write .",
+    "format": "biome format --write ."
   },
   "jest": {
     "preset": "@repo/jest-presets/node"
   },
   "dependencies": {
-    "@repo/logger": "workspace:*",
+    "@repo/utils": "workspace:*",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.18.3",

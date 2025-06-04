@@ -6,9 +6,9 @@
     "build": "turbo run build",
     "clean": "turbo run clean",
     "dev": "turbo run dev",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "lint": "turbo run lint",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "check": "biome check --write .",
+    "format": "biome format --write ."
   },
   "dependencies": {},
   "devDependencies": {
