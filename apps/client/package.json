@@ -2,25 +2,33 @@
 	"name": "client",
 	"version": "0.0.0",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"build": "next build",
-		"dev": "next dev",
+		"dev": "next dev --turbopack",
 		"start": "next start",
 		"check": "biome check --write .",
 		"format": "biome format --write ."
 	},
 	"dependencies": {
-		"next": "^14.1.1",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"jiti": "^2.4.2",
+		"next": "15.3.3",
+		"react": "19.1.0",
+		"react-dom": "19.1.0"
 	},
 	"devDependencies": {
-		"@next/eslint-plugin-next": "^14.1.1",
-		"@types/node": "^20.11.24",
-		"@types/react": "^18.2.61",
-		"@types/react-dom": "^18.2.19",
-		"eslint": "^8.57.0",
 		"@markly/typescript-config": "workspace:*",
+		"@next/eslint-plugin-next": "15.3.3",
+		"@types/node": "^20.11.24",
+		"@types/react": "19.1.6",
+		"@types/react-dom": "19.1.6",
+		"eslint": "^8.57.0",
 		"typescript": "5.5.4"
+	},
+	"pnpm": {
+		"overrides": {
+			"@types/react": "19.1.6",
+			"@types/react-dom": "19.1.6"
+		}
 	}
 }

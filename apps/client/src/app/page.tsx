@@ -12,7 +12,7 @@ export default function Web() {
 	useEffect(() => {
 		setResponse(null)
 		setError(undefined)
-	}, [name])
+	}, [])
 
 	const onChange = (e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)
 
@@ -29,10 +29,6 @@ export default function Web() {
 		}
 	}
 
-	const onReset = () => {
-		setName("")
-	}
-
 	return (
 		<div>
 			<h1>Web</h1>
@@ -43,7 +39,8 @@ export default function Web() {
 					name="name"
 					id="name"
 					value={name}
-					onChange={onChange}></input>
+					onChange={onChange}
+				/>
 			</form>
 			{error && (
 				<div>
