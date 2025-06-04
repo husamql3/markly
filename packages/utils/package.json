@@ -1,23 +1,21 @@
 {
-  "name": "@markly/utils",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist/**"
-  ],
-  "scripts": {
-    "build": "tsup ./src/*.ts --format esm --dts",
-    "dev": "tsup ./src/*.ts --format esm --dts --watch",
-    "clean": "rm -rf .turbo && rm -rf node_modules"
-  },
-  "devDependencies": {
-    "@markly/typescript-config": "workspace:*",
-    "@types/node": "^20.11.24",
-    "chalk": "^5.4.1",
-    "tsup": "7.2.0",
-    "typescript": "5.5.4"
-  }
+	"name": "@markly/utils",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": ["dist/**"],
+	"scripts": {
+		"build": "tsup ./src/*.ts --format esm --dts",
+		"dev": "tsup ./src/*.ts --format esm --dts --watch",
+		"clean": "rm -rf .turbo && rm -rf node_modules"
+	},
+	"devDependencies": {
+		"@markly/typescript-config": "workspace:*",
+		"@types/node": "^20.11.24",
+		"chalk": "^5.4.1",
+		"tsup": "7.2.0",
+		"typescript": "5.5.4"
+	}
 }

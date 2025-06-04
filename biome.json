@@ -1,104 +1,112 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
-  "formatter": {
-    "enabled": true,
-    "formatWithErrors": false,
-    "indentStyle": "tab",
-    "indentWidth": 2,
-    "lineWidth": 90,
-    "lineEnding": "lf",
-    "ignore": ["node_modules/", "build/", ".next/", "dist/", ".turbo"]
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true,
-      "suspicious": {
-        "noExplicitAny": "warn",
-        "noDebugger": "warn",
-        "noSparseArray": "warn",
-        "noUnsafeNegation": "warn",
-        "useAwait": "warn",
-        "useNamespaceKeyword": "warn",
-        "useValidTypeof": "warn"
-      },
-      "style": {
-        "noNonNullAssertion": "off",
-        "noVar": "error",
-        "useAsConstAssertion": "warn",
-        "useBlockStatements": "warn",
-        "useCollapsedElseIf": "warn",
-        "useConst": "error",
-        "useFragmentSyntax": "warn",
-        "useWhile": "warn"
-      },
-      "performance": {
-        "noDelete": "warn"
-      },
-      "correctness": {
-        "noEmptyPattern": "error",
-        "noInvalidConstructorSuper": "error",
-        "noNewSymbol": "error",
-        "noNonoctalDecimalEscape": "error",
-        "noSwitchDeclarations": "error",
-        "noUndeclaredVariables": "error",
-        "noUnreachableSuper": "error",
-        "noUnsafeFinally": "error",
-        "noUnsafeOptionalChaining": "error",
-        "useValidForDirection": "warn",
-        "useYield": "error"
-      },
-      "security": {
-        "noDangerouslySetInnerHtml": "warn",
-        "noGlobalEval": "warn"
-      },
-      "nursery": {
-        "useSortedClasses": {
-          "level": "warn",
-          "fix": "unsafe",
-          "options": {
-            "functions": ["cn"],
-            "attributes": ["className", "class"]
-          }
-        }
-      }
-    }
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "double",
-      "indentStyle": "tab",
-      "semicolons": "asNeeded",
-      "arrowParentheses": "always",
-      "bracketSameLine": true,
-      "bracketSpacing": true,
-      "jsxQuoteStyle": "double",
-      "quoteProperties": "asNeeded",
-      "trailingCommas": "all",
-      "lineEnding": "lf",
-      "attributePosition": "multiline"
-    }
-  },
-  "json": {
-    "formatter": {
-      "trailingCommas": "none"
-    },
-    "parser": {
-      "allowComments": true,
-      "allowTrailingCommas": true
-    }
-  },
-  "vcs": {
-    "enabled": false,
-    "clientKind": "git",
-    "useIgnoreFile": false,
-    "defaultBranch": "main"
-  },
-  "files": {
-    "ignoreUnknown": false,
-    "ignore": ["node_modules/", "build/", ".next/", "dist/", ".turbo"]
-  }
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"organizeImports": {
+		"enabled": true
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false,
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineWidth": 90,
+		"lineEnding": "lf"
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"suspicious": {
+				"noExplicitAny": "warn",
+				"noDebugger": "warn",
+				"noSparseArray": "warn",
+				"noUnsafeNegation": "warn",
+				"useAwait": "warn",
+				"useNamespaceKeyword": "warn",
+				"useValidTypeof": "warn"
+			},
+			"style": {
+				"noNonNullAssertion": "off",
+				"noVar": "error",
+				"useAsConstAssertion": "warn",
+				"useBlockStatements": "warn",
+				"useCollapsedElseIf": "warn",
+				"useConst": "error",
+				"useFragmentSyntax": "warn",
+				"useWhile": "warn"
+			},
+			"performance": {
+				"noDelete": "warn"
+			},
+			"correctness": {
+				"noEmptyPattern": "error",
+				"noInvalidConstructorSuper": "error",
+				"noNewSymbol": "error",
+				"noNonoctalDecimalEscape": "error",
+				"noSwitchDeclarations": "error",
+				"noUndeclaredVariables": "error",
+				"noUnreachableSuper": "error",
+				"noUnsafeFinally": "error",
+				"noUnsafeOptionalChaining": "error",
+				"useValidForDirection": "warn",
+				"useYield": "error"
+			},
+			"security": {
+				"noDangerouslySetInnerHtml": "warn",
+				"noGlobalEval": "warn"
+			},
+			"nursery": {
+				"useSortedClasses": {
+					"level": "warn",
+					"fix": "unsafe",
+					"options": {
+						"functions": ["cn"],
+						"attributes": ["className", "class"]
+					}
+				}
+			}
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double",
+			"indentStyle": "tab",
+			"semicolons": "always",
+			"arrowParentheses": "always",
+			"bracketSameLine": true,
+			"bracketSpacing": true,
+			"jsxQuoteStyle": "double",
+			"quoteProperties": "asNeeded",
+			"trailingCommas": "all",
+			"lineEnding": "lf",
+			"attributePosition": "multiline"
+		}
+	},
+	"json": {
+		"formatter": {
+			"trailingCommas": "none"
+		},
+		"parser": {
+			"allowComments": true,
+			"allowTrailingCommas": true
+		}
+	},
+	"vcs": {
+		"enabled": false,
+		"clientKind": "git",
+		"useIgnoreFile": false,
+		"defaultBranch": "main"
+	},
+	"files": {
+		"ignoreUnknown": false,
+		"ignore": [
+			"node_modules/",
+			"build/",
+			".next/",
+			"dist/",
+			".turbo",
+			".react-router",
+			"__tests__",
+			"__mocks__"
+		]
+	}
 }

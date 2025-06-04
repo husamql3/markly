@@ -1,28 +1,26 @@
 {
-  "name": "@markly/lib",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist/**"
-  ],
-  "scripts": {
-    "build": "tsc && tsc-alias",
-    "dev": "nodemon --exec \"tsx ./src/index.ts\" -e .ts",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
-  },
-  "devDependencies": {
-    "@markly/typescript-config": "workspace:^",
-    "@types/node": "^20.11.24",
-    "tsx": "*",
-    "typescript": "5.5.4"
-  },
-  "dependencies": {
-    "@t3-oss/env-core": "^0.13.6",
-    "dotenv": "^16.5.0",
-    "tsc-alias": "^1.8.8",
-    "zod": "^3.25.51"
-  }
+	"name": "@markly/lib",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": ["dist/**"],
+	"scripts": {
+		"build": "tsc && tsc-alias",
+		"dev": "nodemon --exec \"tsx ./src/index.ts\" -e .ts",
+		"clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+	},
+	"devDependencies": {
+		"@markly/typescript-config": "workspace:^",
+		"@types/node": "^20.11.24",
+		"tsx": "*",
+		"typescript": "5.5.4"
+	},
+	"dependencies": {
+		"@t3-oss/env-core": "^0.13.6",
+		"dotenv": "^16.5.0",
+		"tsc-alias": "^1.8.8",
+		"zod": "^3.25.51"
+	}
 }
