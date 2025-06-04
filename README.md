@@ -18,17 +18,17 @@ This Turborepo includes the following:
 
 - `client`: a [Next.js](https://nextjs.org/) app
 - `server`: an [Express](https://expressjs.com/) server
-- `@repo/ui`: a React component library
-- `@repo/utils`: Isomorphic utils (a small wrapper around console.log)
-- `@repo/eslint-config`: ESLint presets
-- `@repo/typescript-config`: tsconfig.json's used throughout the monorepo
-- `@repo/jest-presets`: Jest configurations
+- `@markly/ui`: a React component library
+- `@markly/utils`: Isomorphic utils (a small wrapper around console.log)
+- `@markly/eslint-config`: ESLint presets
+- `@markly/typescript-config`: tsconfig.json's used throughout the monorepo
+- `@markly/jest-presets`: Jest configurations
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
 ### Docker
 
-This repo is configured to be built with Docker, and Docker compose. To build all apps in this repo:
+This markly is configured to be built with Docker, and Docker compose. To build all apps in this markly:
 
 ```
 # Install dependencies

@@ -1,23 +1,23 @@
 {
-  "name": "with-docker",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "clean": "turbo run clean",
-    "dev": "turbo run dev",
-    "test": "turbo run test",
-    "check": "biome check --write .",
-    "format": "biome format --write ."
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "prettier": "^3.2.5",
-    "turbo": "^2.5.4"
-  },
-  "engines": {
-    "node": ">=14.0.0",
-    "npm": ">=7.0.0"
-  },
-  "packageManager": "pnpm@10.8.1"
+	"name": "with-docker",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"build": "turbo run build",
+		"clean": "turbo run clean",
+		"dev": "turbo run dev",
+		"test": "turbo run test",
+		"check": "biome check --write .",
+		"format": "biome format --write ."
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"prettier": "^3.2.5",
+		"turbo": "^2.5.4"
+	},
+	"engines": {
+		"node": ">=14.0.0",
+		"npm": ">=7.0.0"
+	},
+	"packageManager": "pnpm@10.8.1"
 }

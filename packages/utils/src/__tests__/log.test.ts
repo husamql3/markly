@@ -1,11 +1,11 @@
-import { describe, it, expect, jest } from "@jest/globals";
-import { log } from "..";
+import { describe, expect, it, jest } from "@jest/globals"
+import { log } from ".."
 
-jest.spyOn(global.console, "log");
+jest.spyOn(global.console, "log")
 
-describe("@repo/utils", () => {
-  it("prints a message", () => {
-    log("hello");
-    expect(console.log).toHaveBeenCalled();
-  });
-});
+describe("@markly/utils", () => {
+	it("prints a message", () => {
+		log("hello")
+		expect(console.log).toHaveBeenCalled()
+	})
+})
