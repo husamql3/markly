@@ -1,10 +1,13 @@
 {
-	"extends": "@markly/typescript-config/base.json",
-	"compilerOptions": {
-		"lib": ["ES2015"],
-		"outDir": "./dist",
-		"rootDir": "./src"
-	},
-	"exclude": ["node_modules"],
-	"include": ["src"]
+  "extends": "@markly/typescript-config/base.json",
+  "compilerOptions": {
+    "lib": ["ES2015"],
+    "outDir": "./dist",
+    "moduleResolution": "Bundler",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["src"]
 }
