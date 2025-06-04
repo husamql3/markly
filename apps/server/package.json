@@ -4,10 +4,10 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"build": "tsc",
+		"build": "tsc && tsc-alias",
 		"clean": "rm -rf dist",
-		"dev": "nodemon --exec \"node -r esbuild-register ./src/index.ts\" -e .ts",
-		"start": "node -r esbuild-register ./src/index.ts",
+		"dev": "nodemon --exec \"tsx ./src/index.ts\" -e .ts",
+		"start": "node ./dist/index.js",
 		"test": "jest --detectOpenHandles",
 		"check": "biome check --write .",
 		"format": "biome format --write ."
@@ -38,6 +38,8 @@
 		"jest": "^29.7.0",
 		"nodemon": "^3.1.0",
 		"supertest": "^6.3.3",
+		"tsc-alias": "^1.8.8",
+		"tsx": "^4.7.0",
 		"typescript": "5.5.4"
 	}
 }

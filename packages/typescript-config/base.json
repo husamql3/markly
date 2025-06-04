@@ -8,19 +8,21 @@
     "forceConsistentCasingInFileNames": true,
     "inlineSources": false,
     "isolatedModules": true,
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "module": "ES2022",
+    "moduleResolution": "Node",
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "preserveWatchOutput": true,
     "skipLibCheck": true,
     "strict": true,
-    "plugins": [{ "name": "next" }],
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ES2022",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "allowImportingTsExtensions": false,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "verbatimModuleSyntax": false
   },
   "exclude": ["node_modules"],
-  "include": ["src", "next-env.d.ts"]
+  "include": ["src/**/*", "next-env.d.ts"]
 }
