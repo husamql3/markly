@@ -82,7 +82,7 @@ importers:
         specifier: 5.5.4
         version: 5.5.4
 
-  apps/web:
+  apps/client:
     dependencies:
       next:
         specifier: ^14.1.1
