@@ -1,10 +1,10 @@
-import bodyParser from "body-parser"
-import cors from "cors"
-import express, { type Express } from "express"
-import morgan from "morgan"
+import bodyParser from "body-parser";
+import cors from "cors";
+import express, { type Express } from "express";
+import morgan from "morgan";
 
 export const createServer = (): Express => {
-	const app = express()
+	const app = express();
 	app
 		.disable("x-powered-by")
 		.use(morgan("dev"))
@@ -12,11 +12,11 @@ export const createServer = (): Express => {
 		.use(bodyParser.json())
 		.use(cors())
 		.get("/message/:name", (req, res) => {
-			return res.json({ message: `hello ${req.params.name}` })
+			return res.json({ message: `hello ${req.params.name}` });
 		})
 		.get("/status", (_, res) => {
-			return res.json({ ok: true })
-		})
+			return res.json({ ok: true });
+		});
 
-	return app
-}
+	return app;
+};

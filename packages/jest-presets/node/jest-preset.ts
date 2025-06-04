@@ -1,4 +1,4 @@
-import type { Config } from "jest"
+import type { Config } from "jest";
 
 const config = {
 	roots: ["<rootDir>"],
@@ -12,6 +12,6 @@ const config = {
 		"<rootDir>/dist",
 	],
 	preset: "ts-jest",
-} as const satisfies Config
+} as const satisfies Config;
 
-export default config
+export default config;
