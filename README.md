@@ -17,7 +17,7 @@ This Turborepo includes the following:
 ### Apps and Packages
 
 - `client`: a [Next.js](https://nextjs.org/) app
-- `api`: an [Express](https://expressjs.com/) server
+- `server`: an [Express](https://expressjs.com/) server
 - `@repo/ui`: a React component library
 - `@repo/logger`: Isomorphic logger (a small wrapper around console.log)
 - `@repo/eslint-config`: ESLint presets

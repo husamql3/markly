@@ -11,11 +11,11 @@ services:
       - 3000:3000
     networks:
       - app_network
-  api:
-    container_name: api
+  server:
+    container_name: server
     build:
       context: .
-      dockerfile: ./apps/api/Dockerfile
+      dockerfile: ./apps/server/Dockerfile
     restart: always
     ports:
       - 3001:3001

@@ -11,7 +11,7 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 RUN yarn global add turbo
 COPY . .
-RUN turbo prune api --docker
+RUN turbo prune server --docker
 
 # Add lockfile and package.json's of isolated subworkspace
 FROM base AS installer
@@ -44,4 +44,4 @@ RUN adduser --system --uid 1001 expressjs
 USER expressjs
 COPY --from=installer /app .
 
-CMD node apps/api/dist/index.js
+CMD node apps/server/dist/index.js
