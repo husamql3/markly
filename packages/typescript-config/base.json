@@ -1,0 +1,28 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"compilerOptions": {
+		"composite": false,
+		"declaration": true,
+		"declarationMap": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"inlineSources": false,
+		"isolatedModules": true,
+		"module": "ES2022",
+		"moduleResolution": "Node",
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"preserveWatchOutput": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"target": "ES2022",
+		"lib": ["DOM", "DOM.Iterable", "ES2022"],
+		"allowImportingTsExtensions": false,
+		"resolveJsonModule": true,
+		"jsx": "react-jsx",
+		"allowSyntheticDefaultImports": true,
+		"verbatimModuleSyntax": false
+	},
+	"exclude": ["node_modules"],
+	"include": ["src/**/*", "next-env.d.ts"]
+}
