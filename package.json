@@ -13,6 +13,9 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
+		"@commitlint/cli": "^19.8.1",
+		"@commitlint/config-conventional": "^19.8.1",
+		"husky": "^9.1.7",
 		"prettier": "^3.2.5",
 		"turbo": "^2.5.4"
 	},
