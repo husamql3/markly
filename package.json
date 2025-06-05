@@ -4,12 +4,11 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "prepare": "husky install",
     "build": "turbo run build",
     "clean": "turbo run clean",
     "dev": "turbo run dev",
     "test": "turbo run test",
-    "prepare": "husky install",
-    "commit": "commit",
     "check": "biome check --write .",
     "format": "biome format --write ."
   },
