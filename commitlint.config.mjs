@@ -8,6 +8,8 @@ export default {
       [
         "feat",
         "fix",
+        "rm",
+        "add",
         "refactor",
         "enhancement",
         "docs",
