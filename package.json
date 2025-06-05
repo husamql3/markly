@@ -1,27 +1,30 @@
 {
-	"name": "markly",
-	"version": "0.0.0",
-	"private": true,
-	"license": "MIT",
-	"scripts": {
-		"build": "turbo run build",
-		"clean": "turbo run clean",
-		"dev": "turbo run dev",
-		"test": "turbo run test",
-		"check": "biome check --write .",
-		"format": "biome format --write ."
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
-		"@commitlint/cli": "^19.8.1",
-		"@commitlint/config-conventional": "^19.8.1",
-		"husky": "^9.1.7",
-		"prettier": "^3.2.5",
-		"turbo": "^2.5.4"
-	},
-	"engines": {
-		"node": ">=14.0.0",
-		"npm": ">=7.0.0"
-	},
-	"packageManager": "pnpm@10.8.1"
+  "name": "markly",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "dev": "turbo run dev",
+    "test": "turbo run test",
+    "prepare": "husky install",
+    "commit": "commit",
+    "check": "biome check --write .",
+    "format": "biome format --write ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/prompt-cli": "^19.8.1",
+    "husky": "^9.1.7",
+    "prettier": "^3.2.5",
+    "turbo": "^2.5.4"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=7.0.0"
+  },
+  "packageManager": "pnpm@10.8.1"
 }

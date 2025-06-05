@@ -1,4 +1,5 @@
 export default {
+  extends: ["@commitlint/config-conventional"],
   parserPreset: "conventional-changelog-conventionalcommits",
   rules: {
     "type-enum": [
@@ -21,7 +22,17 @@ export default {
     "scope-enum": [
       2,
       "always",
-      ["client", "server", "db", "utils", "tsconfig"],
+      [
+        "client",
+        "server",
+        "db",
+        "utils",
+        "tsconfig",
+        "config",
+        "scripts",
+        "types",
+        "global",
+      ],
     ],
     "type-case": [2, "always", "lower-case"],
     "subject-empty": [2, "never"],
