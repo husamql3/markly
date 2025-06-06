@@ -4,6 +4,9 @@
 	"private": true,
 	"license": "MIT",
 	"files": ["node/jest-preset.ts"],
+	"scripts": {
+		"clean": "rm -rf .turbo && rm -rf node_modules"
+	},
 	"dependencies": {
 		"jest": "^29.7.0",
 		"ts-jest": "^29.2.5"
