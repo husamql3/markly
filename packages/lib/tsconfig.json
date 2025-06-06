@@ -1,16 +1,16 @@
 {
-	"extends": "@markly/typescript-config/base.json",
-	"compilerOptions": {
-		"lib": ["ES2022"],
-		"module": "NodeNext",
-		"outDir": "./dist",
-		"rootDir": "./src",
-		"types": ["node"],
-		"moduleResolution": "NodeNext",
-		"declaration": true,
-		"declarationMap": true,
-		"sourceMap": true
-	},
-	"include": ["src"],
-	"exclude": ["node_modules", "dist"]
+  "extends": "@markly/typescript-config/base.json",
+  "compilerOptions": {
+    "lib": ["ES2022"],
+    "module": "NodeNext",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "types": ["node"],
+    "moduleResolution": "NodeNext",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

@@ -14,17 +14,34 @@
       "dependsOn": ["^build"],
       "env": ["NEXT_PUBLIC_API_HOST"]
     },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
     "test": {
       "cache": false,
       "outputs": ["coverage/**"],
       "dependsOn": []
     },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
     "clean": {
       "cache": false
+    },
+    "format": {
+      "cache": false,
+      "outputs": []
+    },
+    "check": {
+      "cache": false,
+      "outputs": []
+    },
+    "typecheck": {
+      "cache": false,
+      "outputs": [],
+      "dependsOn": ["^build"]
+    },
+    "lint": {
+      "cache": false,
+      "outputs": []
     }
   }
 }

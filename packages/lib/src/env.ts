@@ -10,13 +10,16 @@ const __dirname = dirname(__filename);
 config({ path: resolve(__dirname, "../../../.env") });
 
 export const env = createEnv({
-	server: {
-		NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
-		PORT: z.string().default("8080"),
-	},
+  server: {
+    NODE_ENV: z
+      .enum(["development", "production", "test"])
+      .default("development"),
+    PORT: z.string().default("8080"),
+    DATABASE_URL: z.url(),
+  },
 
-	clientPrefix: "PUBLIC_",
-	client: {},
+  clientPrefix: "PUBLIC_",
+  client: {},
 
-	runtimeEnv: process.env,
+  runtimeEnv: process.env,
 });

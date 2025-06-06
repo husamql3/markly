@@ -1,0 +1,39 @@
+{
+  "name": "@markly/db",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup ./src/*.ts --format esm --dts",
+    "dev": "tsup ./src/*.ts --format esm --dts --watch",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "format": "biome format --write .",
+    "check": "biome check --write .",
+    "typecheck": "tsc --noEmit",
+    "generate": "npx drizzle-kit generate",
+    "migrate": "tsx src/migrate.ts",
+    "studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@markly/lib": "workspace:*",
+    "@markly/utils": "workspace:*",
+    "drizzle-orm": "^0.44.2",
+    "pg": "^8.16.0",
+    "postgres": "^3.4.7"
+  },
+  "devDependencies": {
+    "@markly/typescript-config": "workspace:*",
+    "@types/node": "^20.19.0",
+    "@types/pg": "^8.15.4",
+    "chalk": "^5.4.1",
+    "drizzle-kit": "^0.31.1",
+    "tsup": "7.2.0",
+    "tsx": "^4.19.4",
+    "typescript": "5.5.4"
+  }
+}
