@@ -12,8 +12,8 @@ export const meta = () => {
   ];
 };
 
-const Root = () => {
-  return <main className="flex h-svh items-center justify-center">Root</main>;
+const Index = () => {
+  return <main className="flex h-svh items-center justify-center">Home</main>;
 };
 
-export default Root;
+export default Index;

@@ -13,7 +13,7 @@ export const meta = () => {
 };
 
 const Login = () => {
-  return <main className="flex h-svh items-center justify-center">login</main>;
+  return <main className="flex h-svh items-center justify-center">Auth</main>;
 };
 
 export default Login;
