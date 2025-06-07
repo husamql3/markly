@@ -7,6 +7,6 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function Home() {
-  return <main className="flex h-svh items-center justify-center">hi</main>;
+export default function Login() {
+  return <main className="flex h-svh items-center justify-center">login</main>;
 }
