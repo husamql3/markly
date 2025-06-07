@@ -1,12 +1,19 @@
-import type { Route } from "./+types/home";
-
-export function meta({}: Route.MetaArgs) {
+export const meta = () => {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Markly" },
+    {
+      property: "og:title",
+      content: "Very cool app",
+    },
+    {
+      name: "description",
+      content: "Welcome to Markly!",
+    },
   ];
-}
+};
 
-export default function Login() {
+const Login = () => {
   return <main className="flex h-svh items-center justify-center">login</main>;
-}
+};
+
+export default Login;
