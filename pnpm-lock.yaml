@@ -202,6 +202,9 @@ importers:
       '@markly/utils':
         specifier: workspace:*
         version: link:../utils
+      dotenv:
+        specifier: ^16.5.0
+        version: 16.5.0
       drizzle-orm:
         specifier: ^0.44.2
         version: 0.44.2(@types/pg@8.15.4)(pg@8.16.0)(postgres@3.4.7)
