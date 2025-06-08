@@ -9,8 +9,10 @@
     "clean": "turbo run clean",
     "dev": "turbo run dev",
     "test": "turbo run test",
-    "check": "biome check --write .",
-    "format": "biome format --write ."
+    "check": "turbo run check",
+    "format": "turbo run format",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",

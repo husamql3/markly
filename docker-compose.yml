@@ -11,6 +11,7 @@ services:
       - 3000:3000
     networks:
       - app_network
+
   server:
     container_name: server
     build:
@@ -18,12 +19,20 @@ services:
       dockerfile: ./apps/server/Dockerfile
     restart: always
     ports:
-      - 3001:3001
+      - 8080:8080
     networks:
       - app_network
 
-# Define a network, which allows containers to communicate
-# with each other, by using their container name as a hostname
+  db:
+    image: postgres:16-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
 networks:
   app_network:
     external: true
+
+volumes:
+  postgres_data:
