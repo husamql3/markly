@@ -9,4 +9,11 @@ export default defineConfig({
   build: {
     outDir: "dist",
   },
+  server: {
+    cors: {
+      origin: "http://localhost:3000",
+      methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+      credentials: true,
+    },
+  },
 });
