@@ -14,7 +14,8 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "format": "biome format --write .",
     "check": "biome check --write .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "generate:auth": "npx @better-auth/cli generate --output ../db/src/schema/auth.ts --y"
   },
   "dependencies": {
     "@markly/lib": "workspace:*",

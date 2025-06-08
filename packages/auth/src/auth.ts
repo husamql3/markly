@@ -1,7 +1,8 @@
-import { betterAuth } from "better-auth";
-import { magicLink } from "better-auth/plugins";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { magicLink } from "better-auth/plugins";
+import { betterAuth } from "better-auth";
 
+import { user, session, account, verification } from "@markly/db/src/schema";
 import { db } from "@markly/db";
 import { SERVER_BASE_URL } from "@markly/utils";
 
@@ -12,7 +13,12 @@ export const auth = betterAuth({
   baseURL: SERVER_BASE_URL,
   database: drizzleAdapter(db, {
     provider: "pg",
-    schema: db,
+    schema: {
+      user,
+      session,
+      account,
+      verification,
+    },
   }),
   socialProviders: {
     google: {
