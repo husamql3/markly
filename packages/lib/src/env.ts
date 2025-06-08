@@ -16,6 +16,13 @@ export const env = createEnv({
       .default("development"),
     PORT: z.string().default("8080"),
     DATABASE_URL: z.url(),
+
+    // OAuth
+    GOOGLE_CLIENT_ID: z.string().min(1),
+    GOOGLE_CLIENT_SECRET: z.string().min(1),
+    APPLE_CLIENT_ID: z.string().min(1),
+    APPLE_CLIENT_SECRET: z.string().min(1),
+    APPLE_APP_BUNDLE_IDENTIFIER: z.string().min(1),
   },
   runtimeEnv: process.env,
 });

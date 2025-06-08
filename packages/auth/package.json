@@ -1,5 +1,5 @@
 {
-  "name": "@markly/db",
+  "name": "@markly/auth",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -14,14 +14,13 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "format": "biome format --write .",
     "check": "biome check --write .",
-    "typecheck": "tsc --noEmit",
-    "generate": "npx drizzle-kit generate",
-    "migrate": "tsx src/migrate.ts",
-    "studio": "drizzle-kit studio"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@markly/lib": "workspace:*",
     "@markly/utils": "workspace:*",
+    "@markly/db": "workspace:*",
+    "better-auth": "^1.2.8",
     "dotenv": "^16.5.0",
     "drizzle-orm": "^0.44.2",
     "pg": "^8.16.0",
