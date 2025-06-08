@@ -13,6 +13,7 @@ export const meta = () => {
 };
 
 const Index = () => {
+  console.log(import.meta.env.DEV);
   return <main className="flex h-svh items-center justify-center">Home</main>;
 };
 

@@ -10,14 +10,13 @@ export const createQueryClient = () =>
   new QueryClient({
     defaultOptions: {
       queries: {
-        // With SSR, we usually want to set some default staleTime
-        // above 0 to avoid refetching immediately on the client
         staleTime: 30 * 1000,
       },
+      mutations: {
+        retry: 1,
+      },
       dehydrate: {
-        shouldDehydrateQuery: (query) =>
-          defaultShouldDehydrateQuery(query) ||
-          query.state.status === "pending",
+        shouldDehydrateQuery: defaultShouldDehydrateQuery,
       },
     },
   });
@@ -28,6 +27,7 @@ const getQueryClient = () => {
     // Server: always make a new query client
     return createQueryClient();
   }
+
   // Browser: use singleton pattern to keep the same query client
   clientQueryClientSingleton ??= createQueryClient();
 
@@ -40,7 +40,11 @@ export const ReactQueryProvider = ({ children }: { children: ReactNode }) => {
   return (
     <QueryClientProvider client={queryClient}>
       {children}
-      <ReactQueryDevtools initialIsOpen={false} />
+
+      {import.meta.env.DEV && (
+        // https://vite.dev/guide/env-and-mode#built-in-constants
+        <ReactQueryDevtools initialIsOpen={false} />
+      )}
     </QueryClientProvider>
   );
 };

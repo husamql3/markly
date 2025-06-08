@@ -32,6 +32,9 @@ importers:
 
   apps/client:
     dependencies:
+      '@markly/lib':
+        specifier: workspace:*
+        version: link:../../packages/lib
       '@react-router/fs-routes':
         specifier: ^7.6.2
         version: 7.6.2(@react-router/dev@7.6.2(@react-router/serve@7.6.2(react-router@7.6.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3))(@types/node@20.17.57)(jiti@2.4.2)(lightningcss@1.30.1)(react-router@7.6.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(tsx@4.19.4)(typescript@5.8.3)(vite@6.3.5(@types/node@20.17.57)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4)(yaml@2.8.0))(yaml@2.8.0))(typescript@5.8.3)

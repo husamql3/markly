@@ -17,9 +17,5 @@ export const env = createEnv({
     PORT: z.string().default("8080"),
     DATABASE_URL: z.url(),
   },
-
-  clientPrefix: "PUBLIC_",
-  client: {},
-
   runtimeEnv: process.env,
 });
