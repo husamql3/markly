@@ -1,12 +1,13 @@
 import type { Config } from "drizzle-kit";
+import * as dotenv from "dotenv";
 
-import { env } from "@markly/lib";
+dotenv.config({ path: "../../.env" });
 
 export default {
   schema: "./src/schema.ts",
   dialect: "postgresql",
   out: "./drizzle",
   dbCredentials: {
-    url: env.DATABASE_URL,
+    url: process.env.DATABASE_URL as string,
   },
 } satisfies Config;
