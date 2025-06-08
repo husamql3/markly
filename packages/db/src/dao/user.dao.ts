@@ -1,39 +1,29 @@
 import { eq, type SQL } from "drizzle-orm";
 
 import { BaseDao } from "./base.dao";
-import { users } from "../schema";
+import { user, type User } from "../schema/auth";
 import { db } from "../db";
 
-export interface User {
-  id: number;
-  email: string;
-  name: string | null;
-  password: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
 export class UserDao extends BaseDao<User> {
-  protected table = users;
+  protected table = user;
 
   async getByEmail(email: string): Promise<User | undefined> {
-    const [user] = await db
+    const [foundUser] = await db
       .select()
-      .from(users)
-      .where(eq(users.email, email))
+      .from(user)
+      .where(eq(user.email, email))
       .limit(1);
 
-    return user as unknown as User | undefined;
+    return foundUser as User | undefined;
   }
 
-  async findWithPosts(id: number) {
-    const result = await db.query.users.findFirst({
-      where: eq(users.id, id),
-      with: {
-        posts: true,
-      },
-    });
+  async findByUserId(id: string): Promise<User | undefined> {
+    const [foundUser] = await db
+      .select()
+      .from(user)
+      .where(eq(user.id, id))
+      .limit(1);
 
-    return result;
+    return foundUser as User | undefined;
   }
 }
