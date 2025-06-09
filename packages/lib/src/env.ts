@@ -23,6 +23,12 @@ export const env = createEnv({
     APPLE_CLIENT_ID: z.string().min(1),
     APPLE_CLIENT_SECRET: z.string().min(1),
     APPLE_APP_BUNDLE_IDENTIFIER: z.string().min(1),
+
+    // Email
+    SMTP_USER: z.string().email("Invalid email format"),
+    SMTP_PASSWORD: z.string().min(1),
+    SMTP_FROM_EMAIL: z.string().email("Invalid email format"),
+    SMTP_FROM_NAME: z.string().min(1),
   },
   runtimeEnv: process.env,
 });

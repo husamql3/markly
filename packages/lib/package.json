@@ -5,7 +5,9 @@
 	"type": "module",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": ["dist/**"],
+	"files": [
+		"dist/**"
+	],
 	"scripts": {
 		"build": "tsc && tsc-alias",
 		"dev": "nodemon --exec \"tsx ./src/index.ts\" -e .ts",
@@ -22,7 +24,9 @@
 	},
 	"dependencies": {
 		"@t3-oss/env-core": "^0.13.6",
+		"@types/nodemailer": "^6.4.17",
 		"dotenv": "^16.5.0",
+		"nodemailer": "^7.0.3",
 		"tsc-alias": "^1.8.8",
 		"zod": "^3.25.51"
 	}
