@@ -17,7 +17,9 @@
     "typecheck": "tsc --noEmit",
     "generate": "npx drizzle-kit generate",
     "migrate": "tsx src/migrate.ts",
-    "studio": "drizzle-kit studio"
+    "studio": "drizzle-kit studio",
+    "drop": "tsx src/drop.ts",
+    "reset": "pnpm drop && pnpm migrate"
   },
   "dependencies": {
     "@markly/lib": "workspace:*",

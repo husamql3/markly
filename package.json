@@ -12,7 +12,13 @@
     "check": "turbo run check",
     "format": "turbo run format",
     "typecheck": "turbo run typecheck",
-    "lint": "turbo run lint"
+    "lint": "turbo run lint",
+    "db:migrate": "turbo run migrate --filter=@markly/db",
+    "db:generate": "turbo run generate --filter=@markly/db",
+    "db:studio": "turbo run studio --filter=@markly/db",
+    "db:drop": "turbo run drop --filter=@markly/db",
+    "db:reset": "turbo run reset --filter=@markly/db",
+    "auth:generate": "turbo run generate --filter=@markly/auth"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
