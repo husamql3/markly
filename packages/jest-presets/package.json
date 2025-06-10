@@ -3,7 +3,8 @@
 	"version": "0.0.0",
 	"private": true,
 	"license": "MIT",
-	"files": ["node/jest-preset.ts"],
+	"main": "node/jest-preset.ts",
+	"files": ["node"],
 	"scripts": {
 		"clean": "rm -rf .turbo && rm -rf node_modules"
 	},
