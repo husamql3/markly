@@ -1,0 +1,2 @@
+ALTER TABLE "bookmark" ADD COLUMN "collection_id" uuid;--> statement-breakpoint
+ALTER TABLE "bookmark" ADD CONSTRAINT "bookmark_collection_id_collection_id_fk" FOREIGN KEY ("collection_id") REFERENCES "public"."collection"("id") ON DELETE no action ON UPDATE no action;

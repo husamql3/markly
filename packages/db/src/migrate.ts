@@ -8,8 +8,8 @@ import { log, tryCatch } from "@markly/utils";
 export const migrationClient = postgres(env.DATABASE_URL, { max: 1 });
 
 async function main() {
-  const result = await tryCatch(async () => {
-    log.debug("Running migrations...");
+	const result = await tryCatch(async () => {
+		log.debug("Running migrations...");
 
 		const migrationDb = drizzle(migrationClient);
 
@@ -17,15 +17,15 @@ async function main() {
 			migrationsFolder: "./drizzle",
 		});
 
-    log.debug("Migrations completed successfully");
-  });
+		log.debug("Migrations completed successfully");
+	});
 
-  if (!result.isSuccess) {
-    log.error("Migration failed:", result.error);
-    process.exit(1);
-  }
+	if (!result.isSuccess) {
+		log.error("Migration failed:", result.error);
+		process.exit(1);
+	}
 
-  process.exit(0);
+	process.exit(0);
 }
 
 main();
