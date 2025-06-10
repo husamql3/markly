@@ -8,5 +8,5 @@ const server = createServer();
 // https://www.better-auth.com/docs/integrations/express
 
 server.listen(port, () => {
-  log.debug(`http://localhost:${port}/`);
+	log.debug(`http://localhost:${port}/`);
 });
