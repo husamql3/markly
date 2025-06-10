@@ -3,13 +3,13 @@ import { migrate } from "drizzle-orm/postgres-js/migrator";
 import postgres from "postgres";
 
 import { env } from "@markly/lib";
-import { log } from "@markly/utils";
+import { log, tryCatch } from "@markly/utils";
 
 export const migrationClient = postgres(env.DATABASE_URL, { max: 1 });
 
 async function main() {
-	try {
-		log.debug("Running migrations...");
+  const result = await tryCatch(async () => {
+    log.debug("Running migrations...");
 
 		const migrationDb = drizzle(migrationClient);
 
@@ -17,12 +17,15 @@ async function main() {
 			migrationsFolder: "./drizzle",
 		});
 
-		log.debug("Migrations completed successfully");
-		process.exit(0);
-	} catch (error) {
-		log.error("Migration failed:", error);
-		process.exit(1);
-	}
+    log.debug("Migrations completed successfully");
+  });
+
+  if (!result.isSuccess) {
+    log.error("Migration failed:", result.error);
+    process.exit(1);
+  }
+
+  process.exit(0);
 }
 
 main();
