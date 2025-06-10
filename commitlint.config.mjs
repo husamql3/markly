@@ -1,6 +1,11 @@
 export default {
   extends: ["@commitlint/config-conventional"],
-  parserPreset: "conventional-changelog-conventionalcommits",
+  parserPreset: {
+    parserOpts: {
+      headerPattern: /^(\w*)(?:\((.*)\))?: (.*)$/,
+      headerCorrespondence: ['type', 'scope', 'subject']
+    }
+  },
   rules: {
     "type-enum": [
       2,
