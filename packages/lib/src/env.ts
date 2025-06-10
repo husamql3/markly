@@ -10,12 +10,10 @@ const __dirname = dirname(__filename);
 config({ path: resolve(__dirname, "../../../.env") });
 
 export const env = createEnv({
-  server: {
-    NODE_ENV: z
-      .enum(["development", "production", "test"])
-      .default("development"),
-    PORT: z.string().default("8080"),
-    DATABASE_URL: z.url(),
+	server: {
+		NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
+		PORT: z.string().default("8080"),
+		DATABASE_URL: z.url(),
 
     // OAuth
     GOOGLE_CLIENT_ID: z.string().min(1),

@@ -1,5 +1,5 @@
-import { migrate } from "drizzle-orm/postgres-js/migrator";
 import { drizzle } from "drizzle-orm/postgres-js";
+import { migrate } from "drizzle-orm/postgres-js/migrator";
 import postgres from "postgres";
 
 import { env } from "@markly/lib";
@@ -11,11 +11,11 @@ async function main() {
   const result = await tryCatch(async () => {
     log.debug("Running migrations...");
 
-    const migrationDb = drizzle(migrationClient);
+		const migrationDb = drizzle(migrationClient);
 
-    await migrate(migrationDb, {
-      migrationsFolder: "./drizzle",
-    });
+		await migrate(migrationDb, {
+			migrationsFolder: "./drizzle",
+		});
 
     log.debug("Migrations completed successfully");
   });
