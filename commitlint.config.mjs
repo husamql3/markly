@@ -3,8 +3,8 @@ export default {
   parserPreset: {
     parserOpts: {
       headerPattern: /^(\w*)(?:\((.*)\))?: (.*)$/,
-      headerCorrespondence: ['type', 'scope', 'subject']
-    }
+      headerCorrespondence: ["type", "scope", "subject"],
+    },
   },
   rules: {
     "type-enum": [
@@ -24,21 +24,6 @@ export default {
         "ci",
       ],
     ],
-    // "scope-enum": [
-    //   2,
-    //   "always",
-    //   [
-    //     "client",
-    //     "server",
-    //     "db",
-    //     "utils",
-    //     "tsconfig",
-    //     "config",
-    //     "scripts",
-    //     "types",
-    //     "global",
-    //   ],
-    // ],
     "type-case": [2, "always", "lower-case"],
     "subject-empty": [2, "never"],
     "type-empty": [2, "never"],

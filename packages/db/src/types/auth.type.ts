@@ -1,3 +1,3 @@
 import type { user } from "../schema";
 
-export type User = typeof user.$inferSelect;
+export type UserT = typeof user.$inferSelect;
