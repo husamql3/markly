@@ -1,5 +1,3 @@
-import { Navbar } from "@/components/navbar";
-
 export const meta = () => {
   return [
     { title: "Markly" },
@@ -14,12 +12,10 @@ export const meta = () => {
   ];
 };
 
-const Index = () => {
+const Changelog = () => {
   return (
-    <main>
-      <Navbar />
-    </main>
+    <main className="flex h-svh items-center justify-center">Changelog</main>
   );
 };
 
-export default Index;
+export default Changelog;

@@ -42,40 +42,40 @@ export const Navbar = () => {
   }, [scrollY, isMobile]);
 
   return (
-    <header className="my-5 px-3">
-      <motion.nav
-        id="navbar"
-        className={cn(
-          "mx-auto flex max-w-7xl transform-gpu items-center justify-between rounded-lg border bg-zinc-950 px-4 py-2 backdrop-blur-sm transition-all duration-500 ease-out",
-        )}
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0, width: `${width}%` }}
-        transition={{ duration: 0.5, type: "spring", bounce: 0 }}
-      >
-        <div className="flex items-center space-x-6">
-          <span className="font-semibold">Markly</span>
+    <motion.nav
+      id="navbar"
+      className={cn(
+        "fixed top-4 left-1/2 container flex -translate-x-1/2 transform-gpu items-center justify-between rounded-lg border bg-zinc-950/50 px-4 py-2 backdrop-blur-sm transition-all duration-500 ease-out",
+      )}
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0, width: `${width}%` }}
+      transition={{ duration: 0.5, type: "spring", bounce: 0 }}
+    >
+      <div className="flex items-center space-x-6">
+        <Link className="font-semibold" to="/">
+          Markly
+        </Link>
 
-          <div className="space-x-3 text-sm font-light text-zinc-400">
-            {LINKS.map((links) => (
-              <Link
-                key={links.href}
-                to={links.href}
-                className="transition-colors duration-300 hover:text-zinc-50"
-              >
-                {links.label}
-              </Link>
-            ))}
-          </div>
+        <div className="space-x-3 text-sm font-light text-zinc-400">
+          {LINKS.map((links) => (
+            <Link
+              key={links.href}
+              to={links.href}
+              className="transition-colors duration-300 hover:text-zinc-50"
+            >
+              {links.label}
+            </Link>
+          ))}
         </div>
+      </div>
 
-        <div>
-          <Link to="https://github.com/husamql3/markly">
-            <Button variant="ghost" size="icon">
-              <IoLogoGithub />
-            </Button>
-          </Link>
-        </div>
-      </motion.nav>
-    </header>
+      <div>
+        <Link to="https://github.com/husamql3/markly">
+          <Button variant="ghost" size="icon">
+            <IoLogoGithub />
+          </Button>
+        </Link>
+      </div>
+    </motion.nav>
   );
 };
