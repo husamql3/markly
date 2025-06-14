@@ -34,6 +34,11 @@ const getQueryClient = () => {
   return clientQueryClientSingleton;
 };
 
+/**
+ * ReactQueryProvider is a wrapper component that provides the React Query context to its children.
+ * @param children - The children components to be wrapped by the provider.
+ * @returns The wrapped children components.
+ */
 export const ReactQueryProvider = ({ children }: { children: ReactNode }) => {
   const queryClient = getQueryClient();
 
@@ -47,4 +52,24 @@ export const ReactQueryProvider = ({ children }: { children: ReactNode }) => {
 			)} */}
     </QueryClientProvider>
   );
+};
+
+/**
+ * Server-side query client factory for SSR data prefetching
+ * @returns The created server query client.
+ */
+export const createServerQueryClient = () => {
+  return new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 60 * 1000,
+        gcTime: 5 * 60 * 1000,
+      },
+      dehydrate: {
+        shouldDehydrateQuery: (query) =>
+          defaultShouldDehydrateQuery(query) ||
+          query.state.status === "pending",
+      },
+    },
+  });
 };

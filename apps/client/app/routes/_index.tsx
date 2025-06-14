@@ -1,3 +1,5 @@
+import { Navbar } from "@/components/navbar";
+
 export const meta = () => {
   return [
     { title: "Markly" },
@@ -13,7 +15,11 @@ export const meta = () => {
 };
 
 const Index = () => {
-  return <main className="flex h-svh items-center justify-center">Home</main>;
+  return (
+    <main className="h-svh">
+      <Navbar />
+    </main>
+  );
 };
 
 export default Index;
