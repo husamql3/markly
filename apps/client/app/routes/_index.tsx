@@ -16,7 +16,7 @@ export const meta = () => {
 
 const Index = () => {
   return (
-    <main className="h-svh">
+    <main>
       <Navbar />
     </main>
   );

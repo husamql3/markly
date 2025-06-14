@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import { Link } from "react-router";
+import { IoLogoGithub } from "react-icons/io";
 
 import { cn } from "@/lib/utils";
+import { LINKS } from "@/lib/constants";
+import { Button } from "@/components/ui/button";
 
 export const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [width, setWidth] = useState(100);
-  const SCROLL_THRESHOLD_PERCENT = 40; // Renamed for clarity
   const [scrollY, setScrollY] = useState(0);
+  const SCROLL_THRESHOLD_PERCENT = 40;
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -16,12 +20,8 @@ export const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
+    const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -46,13 +46,35 @@ export const Navbar = () => {
       <motion.nav
         id="navbar"
         className={cn(
-          "bg-foreground mx-auto flex max-w-7xl transform-gpu items-center justify-between rounded-lg border p-2 px-3 backdrop-blur-sm transition-all duration-500 ease-out",
+          "mx-auto flex max-w-7xl transform-gpu items-center justify-between rounded-lg border bg-zinc-950 px-4 py-2 backdrop-blur-sm transition-all duration-500 ease-out",
         )}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0, width: `${width}%` }}
         transition={{ duration: 0.5, type: "spring", bounce: 0 }}
       >
-        hi
+        <div className="flex items-center space-x-6">
+          <span className="font-semibold">Markly</span>
+
+          <div className="space-x-3 text-sm font-light text-zinc-400">
+            {LINKS.map((links) => (
+              <Link
+                key={links.href}
+                to={links.href}
+                className="transition-colors duration-300 hover:text-zinc-50"
+              >
+                {links.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <Link to="https://github.com/husamql3/markly">
+            <Button variant="ghost" size="icon">
+              <IoLogoGithub />
+            </Button>
+          </Link>
+        </div>
       </motion.nav>
     </header>
   );
