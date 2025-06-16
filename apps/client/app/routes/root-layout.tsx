@@ -1,5 +1,6 @@
 import { Outlet } from "react-router";
 import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 
 export const meta = () => {
   return [
@@ -17,18 +18,14 @@ export const meta = () => {
 
 const RootLayout = () => {
   return (
-    <div className="min-h-screen bg-zinc-950">
+    <div className="flex min-h-screen flex-col bg-zinc-950">
       <Navbar />
-      <main className="pt-20">
+
+      <main className="flex-1 pt-20">
         <Outlet />
       </main>
 
-      {/* Optional footer */}
-      <footer className="border-t border-zinc-800 px-4 py-8">
-        <div className="container mx-auto text-center text-sm text-zinc-400">
-          <p>&copy; 2024 Markly. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

@@ -1,3 +1,17 @@
+import { motion } from "motion/react";
+
+const container = {
+  hidden: {
+    opacity: 0.8,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
 export const meta = () => {
   return [
     { title: "Markly" },
@@ -14,130 +28,60 @@ export const meta = () => {
 
 const Index = () => {
   return (
-    <div className="container mx-auto px-4">
-      <div className="space-y-8">
-        {/* Hero section */}
-        <section className="py-16 text-center">
-          <h1 className="mb-4 text-4xl font-bold text-white md:text-6xl">
-            Welcome to Markly
-          </h1>
-          <p className="mx-auto max-w-2xl text-xl text-zinc-400">
-            Your markdown editor and viewer
-          </p>
-        </section>
+    <div className="container mx-auto flex flex-col gap-24 px-3">
+      <motion.div
+        className="flex flex-col items-center justify-center gap-4 py-24 text-center"
+        variants={container}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: -20,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.75,
+                type: "spring",
+                bounce: 0,
+              },
+            },
+          }}
+          className="font-heading flex flex-col items-center justify-center text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl"
+        >
+          <motion.h1>Your Go-to Image Storage</motion.h1>
+          <motion.h1 className="blue-gradient">
+            Simple, Secure, and Fast
+          </motion.h1>
+        </motion.div>
 
-        {/* Main content area */}
-        <section className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {/* Add your home page content here */}
-          <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-6">
-            <h3 className="mb-2 text-lg font-semibold text-white">Feature 1</h3>
-            <p className="text-zinc-400">Description of your first feature</p>
-          </div>
-
-          <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-6">
-            <h3 className="mb-2 text-lg font-semibold text-white">Feature 2</h3>
-            <p className="text-zinc-400">Description of your second feature</p>
-          </div>
-
-          <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-6">
-            <h3 className="mb-2 text-lg font-semibold text-white">Feature 3</h3>
-            <p className="text-zinc-400">Description of your third feature</p>
-          </div>
-        </section>
-      </div>
-
-      <div className="space-y-8">
-        {/* Hero section */}
-        <section className="py-16 text-center">
-          <h1 className="mb-4 text-4xl font-bold text-white md:text-6xl">
-            Welcome to Markly
-          </h1>
-          <p className="mx-auto max-w-2xl text-xl text-zinc-400">
-            Your markdown editor and viewer
-          </p>
-        </section>
-
-        {/* Main content area */}
-        <section className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {/* Add your home page content here */}
-          <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-6">
-            <h3 className="mb-2 text-lg font-semibold text-white">Feature 1</h3>
-            <p className="text-zinc-400">Description of your first feature</p>
-          </div>
-
-          <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-6">
-            <h3 className="mb-2 text-lg font-semibold text-white">Feature 2</h3>
-            <p className="text-zinc-400">Description of your second feature</p>
-          </div>
-
-          <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-6">
-            <h3 className="mb-2 text-lg font-semibold text-white">Feature 3</h3>
-            <p className="text-zinc-400">Description of your third feature</p>
-          </div>
-        </section>
-      </div>
-
-      <div className="space-y-8">
-        {/* Hero section */}
-        <section className="py-16 text-center">
-          <h1 className="mb-4 text-4xl font-bold text-white md:text-6xl">
-            Welcome to Markly
-          </h1>
-          <p className="mx-auto max-w-2xl text-xl text-zinc-400">
-            Your markdown editor and viewer
-          </p>
-        </section>
-
-        {/* Main content area */}
-        <section className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {/* Add your home page content here */}
-          <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-6">
-            <h3 className="mb-2 text-lg font-semibold text-white">Feature 1</h3>
-            <p className="text-zinc-400">Description of your first feature</p>
-          </div>
-
-          <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-6">
-            <h3 className="mb-2 text-lg font-semibold text-white">Feature 2</h3>
-            <p className="text-zinc-400">Description of your second feature</p>
-          </div>
-
-          <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-6">
-            <h3 className="mb-2 text-lg font-semibold text-white">Feature 3</h3>
-            <p className="text-zinc-400">Description of your third feature</p>
-          </div>
-        </section>
-      </div>
-
-      <div className="space-y-8">
-        {/* Hero section */}
-        <section className="py-16 text-center">
-          <h1 className="mb-4 text-4xl font-bold text-white md:text-6xl">
-            Welcome to Markly
-          </h1>
-          <p className="mx-auto max-w-2xl text-xl text-zinc-400">
-            Your markdown editor and viewer
-          </p>
-        </section>
-
-        {/* Main content area */}
-        <section className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {/* Add your home page content here */}
-          <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-6">
-            <h3 className="mb-2 text-lg font-semibold text-white">Feature 1</h3>
-            <p className="text-zinc-400">Description of your first feature</p>
-          </div>
-
-          <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-6">
-            <h3 className="mb-2 text-lg font-semibold text-white">Feature 2</h3>
-            <p className="text-zinc-400">Description of your second feature</p>
-          </div>
-
-          <div className="rounded-lg border border-zinc-800 bg-zinc-900 p-6">
-            <h3 className="mb-2 text-lg font-semibold text-white">Feature 3</h3>
-            <p className="text-zinc-400">Description of your third feature</p>
-          </div>
-        </section>
-      </div>
+        <motion.p
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: -20,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.75,
+                type: "spring",
+                bounce: 0,
+              },
+            },
+          }}
+          className="text-muted-foreground text-base md:text-xl"
+        >
+          Store and share your images with ease
+          <br />
+          No more cluttered hard drives or slow uploads
+        </motion.p>
+      </motion.div>
     </div>
   );
 };
