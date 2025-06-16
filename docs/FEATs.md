@@ -2,6 +2,7 @@
 
 - OAuth for Social Media platforms (x & facebook & ig & reddit & yt)
 - Tab for each Platform for its saved posts
+- Pin a bookmark to the top
 - Notes and Annotations: Enable users to add personal notes or comments to saved links
 - Notifications: Remind users to review or revisit saved links after a set period
 - Share: Share specific topics or links with other users - bitly
