@@ -1,17 +1,17 @@
-import { betterAuth } from "better-auth";
-import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "@markly/db";
 import { account, session, user, verification } from "@markly/db/src/schema";
-import { magicLink, oAuthProxy } from "better-auth/plugins";
-import { 
-	SERVER_BASE_URL, 
-	CLIENT_BASE_URL, 
-	MAGIC_LINK_EXPIRY, 
-	GOOGLE_CALLBACK_PATH 
-} from "@markly/utils";
 import { env } from "@markly/lib";
 import { sendMagicLinkEmail } from "@markly/lib/src/email";
+import {
+	CLIENT_BASE_URL,
+	GOOGLE_CALLBACK_PATH,
+	MAGIC_LINK_EXPIRY,
+	SERVER_BASE_URL,
+} from "@markly/utils";
 import { log } from "@markly/utils";
+import { betterAuth } from "better-auth";
+import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { magicLink, oAuthProxy } from "better-auth/plugins";
 
 /**
  * Initialize the authentication service.

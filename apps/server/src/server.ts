@@ -4,9 +4,9 @@ import express, { type Express, type Request, type Response } from "express";
 import morgan from "morgan";
 
 import { auth } from "@markly/auth";
-import { toNodeHandler, fromNodeHeaders } from 'better-auth/node'
 import { CLIENT_BASE_URL } from "@markly/utils";
 import { log, tryCatch } from "@markly/utils";
+import { fromNodeHeaders, toNodeHandler } from "better-auth/node";
 
 // API Routes
 const AUTH_ROUTE = "/api/auth";
@@ -33,7 +33,6 @@ export const createServer = (): Express => {
 	app.use(express.json());
 	app.use(express.urlencoded({ extended: true }));
 	app.use(morgan("dev"));
-
 
 	// User routes
 	app.get(ME_ROUTE, async (req: Request, res: Response) => {

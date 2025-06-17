@@ -5,10 +5,10 @@ import { auth } from "./auth";
  * @param provider: social media provider
  */
 export const login = (provider: "google" | "apple") => {
-  auth.api.signInSocial({
-    body: {
-      provider,
-      scopes: ["email", "profile"],
-    },
-  });
+	auth.api.signInSocial({
+		body: {
+			provider,
+			scopes: ["email", "profile"],
+		},
+	});
 };
