@@ -1,60 +1,51 @@
-import { drizzleAdapter } from "better-auth/adapters/drizzle";
-import { magicLink } from "better-auth/plugins";
 import { betterAuth } from "better-auth";
-
-import { account, session, user, verification } from "@markly/db/src/schema";
-import { SERVER_BASE_URL } from "@markly/utils";
-import { env } from "@markly/lib";
+import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "@markly/db";
+import { account, session, user, verification } from "@markly/db/src/schema";
+import { magicLink, oAuthProxy } from "better-auth/plugins";
+import { 
+	SERVER_BASE_URL, 
+	CLIENT_BASE_URL, 
+	MAGIC_LINK_EXPIRY, 
+	GOOGLE_CALLBACK_PATH 
+} from "@markly/utils";
+import { env } from "@markly/lib";
+import { sendMagicLinkEmail } from "@markly/lib/src/email";
+import { log } from "@markly/utils";
 
 /**
  * Initialize the authentication service.
+ * Handles both magic link and OAuth authentication flows.
  */
 export const auth = betterAuth({
-  baseURL: SERVER_BASE_URL,
-  database: drizzleAdapter(db, {
-    provider: "pg",
-    schema: {
-      user,
-      session,
-      account,
-      verification,
-    },
-  }),
-  socialProviders: {
-    google: {
-      clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
-      callbackUrl: "/auth/google/callback",
-      redirectURI: `${SERVER_BASE_URL}/auth/google/callback`,
-      mapProfileToUser: (profile) => {
-        return {
-          firstName: profile.name.split(" ")[0],
-          lastName: profile.name.split(" ")[1],
-        };
-      },
-    },
-    apple: {
-      clientId: process.env.APPLE_CLIENT_ID as string,
-      clientSecret: process.env.APPLE_CLIENT_SECRET as string,
-      appBundleIdentifier: process.env.APPLE_APP_BUNDLE_IDENTIFIER as string,
-      callbackUrl: "/auth/apple/callback",
-      mapProfileToUser: (profile) => {
-        return {
-          firstName: profile.name.split(" ")[0],
-          lastName: profile.name.split(" ")[1],
-        };
-      },
-    },
-  },
-  secret: env.BETTER_AUTH_SECRET,
-  trustedOrigins: ["https://appleid.apple.com"],
-  plugins: [
-    magicLink({
-      sendMagicLink: ({ email, token, url }, request) => {
-        console.log("Sending magic link to", { email, token, url, request });
-        // Send magic link to user's email
-      },
-    }),
-  ],
+	baseURL: SERVER_BASE_URL,
+	database: drizzleAdapter(db, {
+		provider: "pg",
+		schema: {
+			user,
+			session,
+			account,
+			verification,
+		},
+	}),
+	socialProviders: {
+		google: {
+			clientId: process.env.GOOGLE_CLIENT_ID as string,
+			clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+			redirectURI: `${SERVER_BASE_URL}${GOOGLE_CALLBACK_PATH}`,
+		},
+	},
+	trustedOrigins: [CLIENT_BASE_URL],
+	secret: env.BETTER_AUTH_SECRET,
+	plugins: [
+		oAuthProxy(),
+		magicLink({
+			sendMagicLink: async ({ email, url }) => {
+				log.debug(`Initiating magic link flow for ${email}`);
+				await sendMagicLinkEmail({ email, url });
+				log.debug(`Magic link flow completed for ${email}`);
+			},
+			expiresIn: MAGIC_LINK_EXPIRY,
+		}),
+	],
 });
