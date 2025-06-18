@@ -11,6 +11,6 @@ export default [
     route("about", "./routes/about.tsx"),
     route("features", "./routes/features.tsx"),
     route("changelog", "./routes/changelog.tsx"),
-    route("login", "./routes/login.tsx"),
   ]),
+  route("login", "./routes/login.tsx"),
 ] satisfies RouteConfig;
