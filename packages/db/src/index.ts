@@ -1,3 +1,2 @@
 export { db } from "./db";
-
-// export { UserRepository, type User } from "./dao/user.dao";
+export { User, Session } from "./schema/auth";

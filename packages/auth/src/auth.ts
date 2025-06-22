@@ -3,7 +3,7 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { magicLink, oAuthProxy } from "better-auth/plugins";
 
 import { db } from "@markly/db";
-import { account, session, user, verification } from "@markly/db/src/schema";
+import { Account, Session, User, Verification } from "@markly/db/src/schema";
 import { env } from "@markly/lib";
 import { sendMagicLinkEmail } from "@markly/lib/src/email";
 import {
@@ -23,10 +23,10 @@ export const auth = betterAuth({
   database: drizzleAdapter(db, {
     provider: "pg",
     schema: {
-      user,
-      session,
-      account,
-      verification,
+      User,
+      Session,
+      Account,
+      Verification,
     },
   }),
   socialProviders: {
@@ -37,6 +37,9 @@ export const auth = betterAuth({
     },
   },
   trustedOrigins: [CLIENT_BASE_URL],
+  session: {
+    expiresIn: 60 * 60 * 24 * 7, // 7 days
+  },
   secret: env.BETTER_AUTH_SECRET,
   plugins: [
     oAuthProxy(),

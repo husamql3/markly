@@ -10,7 +10,7 @@ import {
 
 import type { Route } from "./+types/root";
 
-import { ReactQueryProvider } from "./provider";
+import { ReactQueryProvider } from "@/providers/react-query-provider";
 import "./app.css";
 
 export const links: Route.LinksFunction = () => [

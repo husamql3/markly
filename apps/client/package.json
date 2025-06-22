@@ -12,7 +12,9 @@
     "format": "biome format --write ."
   },
   "dependencies": {
+    "@markly/db": "workspace:*",
     "@markly/lib": "workspace:*",
+    "@markly/auth": "workspace:*",
     "@markly/utils": "workspace:*",
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-slot": "^1.2.3",
@@ -33,12 +35,15 @@
     "next": "^15.3.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-hook-form": "^7.58.1",
     "react-icons": "^5.5.0",
     "react-router": "^7.5.3",
     "tailwind-merge": "^3.3.0",
-    "three": "^0.177.0"
+    "three": "^0.177.0",
+    "zustand": "^5.0.5"
   },
   "devDependencies": {
+    "@markly/auth": "workspace:*",
     "@markly/typescript-config": "workspace:*",
     "@next/eslint-plugin-next": "15.3.3",
     "@react-router/dev": "^7.5.3",
