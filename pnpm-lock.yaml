@@ -217,8 +217,8 @@ importers:
         specifier: workspace:*
         version: link:../utils
       '@t3-oss/env-core':
-        specifier: ^0.13.6
-        version: 0.13.6(typescript@5.5.4)(zod@3.25.51)
+        specifier: ^0.13.8
+        version: 0.13.8(typescript@5.5.4)(zod@3.25.51)
       '@types/nodemailer':
         specifier: ^6.4.17
         version: 6.4.17
@@ -1378,8 +1378,8 @@ packages:
   '@swc/types@0.1.23':
     resolution: {integrity: sha512-u1iIVZV9Q0jxY+yM2vw/hZGDNudsN85bBpTqzAQ9rzkxW9D+e3aEM4Han+ow518gSewkXgjmEK0BD79ZcNVgPw==}
 
-  '@t3-oss/env-core@0.13.6':
-    resolution: {integrity: sha512-rH7FgcB1YGbv/tvv7mdJAxnNvRkK/gEqdVYBwO1AVvaWOTNuftqskxkEYyhM2O+lkNPJmTq5YBE7H+Unl7CLjg==}
+  '@t3-oss/env-core@0.13.8':
+    resolution: {integrity: sha512-L1inmpzLQyYu4+Q1DyrXsGJYCXbtXjC4cICw1uAKv0ppYPQv656lhZPU91Qd1VS6SO/bou1/q5ufVzBGbNsUpw==}
     peerDependencies:
       arktype: ^2.1.0
       typescript: '>=5.0.0'
@@ -5465,7 +5465,7 @@ snapshots:
       '@swc/counter': 0.1.3
     optional: true
 
-  '@t3-oss/env-core@0.13.6(typescript@5.5.4)(zod@3.25.51)':
+  '@t3-oss/env-core@0.13.8(typescript@5.5.4)(zod@3.25.51)':
     optionalDependencies:
       typescript: 5.5.4
       zod: 3.25.51
