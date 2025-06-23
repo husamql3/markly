@@ -11,22 +11,30 @@
     "format": "biome format --write ."
   },
   "dependencies": {
+    "@base-ui-components/react": "1.0.0-beta.0",
     "@markly/auth": "workspace:*",
     "@markly/db": "workspace:*",
     "@markly/lib": "workspace:*",
     "@markly/utils": "workspace:*",
+    "@tanstack/react-query": "^5.81.2",
+    "clsx": "^2.1.1",
     "next": "15.3.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "superjson": "^2.2.2",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@tanstack/eslint-plugin-query": "^5.81.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.6.12",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
