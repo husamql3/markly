@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
-import type { SessionT } from "@markly/db";
 import { authClient } from "@markly/auth";
+import type { SessionT } from "@markly/db";
 import { log } from "@markly/utils";
 
 export type AuthState = {

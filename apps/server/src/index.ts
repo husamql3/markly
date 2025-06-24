@@ -3,7 +3,7 @@ import { cors } from "hono/cors";
 import { Hono } from "hono";
 
 import { CLIENT_BASE_URL, log } from "@markly/utils";
-import { auth } from "@markly/auth";
+import { auth } from "@markly/auth/server";
 import { env } from "@markly/lib";
 
 export type AppType = {

@@ -5,7 +5,7 @@ import { magicLink, oAuthProxy } from "better-auth/plugins";
 import { db } from "@markly/db";
 import { Account, Session, User, Verification } from "@markly/db/src/schema";
 import { env } from "@markly/lib";
-import { sendMagicLinkEmail } from "@markly/lib/src/email";
+// import { sendMagicLinkEmail } from "@markly/lib/src/email";
 import {
   CLIENT_BASE_URL,
   GOOGLE_CALLBACK_PATH,
@@ -44,9 +44,9 @@ export const auth = betterAuth({
   plugins: [
     oAuthProxy(),
     magicLink({
-      sendMagicLink: async ({ email, url }) => {
-        log.debug(`Initiating magic link flow for ${email}`);
-        await sendMagicLinkEmail({ email, url });
+      sendMagicLink: ({ email, url }) => {
+        log.debug(`Initiating magic link flow for ${email}, ${url}`);
+        // await sendMagicLinkEmail({ email, url });
         log.debug(`Magic link flow completed for ${email}`);
       },
       expiresIn: MAGIC_LINK_EXPIRY,
