@@ -2,8 +2,8 @@ import { log, tryCatch } from "@markly/utils";
 import { transporter } from "../nodemailer.js";
 
 interface MagicLinkEmailParams {
-	email: string;
-	url: string;
+  email: string;
+  url: string;
 }
 
 /**
@@ -13,13 +13,13 @@ const MAGIC_LINK_TEMPLATE = ({ url }: { url: string }) => `
   <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
     <h1 style="color: #1F2937; margin-bottom: 24px;">Welcome to Markly!</h1>
     <p style="color: #4B5563; margin-bottom: 16px;">Click the button below to sign in to your account:</p>
-    <a href="${url}" 
-       style="display: inline-block; 
-              background-color: #4F46E5; 
-              color: white; 
-              padding: 12px 24px; 
-              text-decoration: none; 
-              border-radius: 6px; 
+    <a href="${url}"
+       style="display: inline-block;
+              background-color: #4F46E5;
+              color: white;
+              padding: 12px 24px;
+              text-decoration: none;
+              border-radius: 6px;
               font-weight: 500;
               margin: 16px 0;">
       Sign In
@@ -41,21 +41,21 @@ const MAGIC_LINK_TEMPLATE = ({ url }: { url: string }) => `
  * @throws {Error} If the email fails to send
  */
 export async function sendMagicLinkEmail({ email, url }: MagicLinkEmailParams) {
-	const mailOptions = {
-		from: process.env.SMTP_USER,
-		to: email,
-		subject: "Your Magic Link for Markly",
-		html: MAGIC_LINK_TEMPLATE({ url }),
-	};
+  const mailOptions = {
+    from: process.env.SMTP_USER,
+    to: email,
+    subject: "Your Magic Link for Markly",
+    html: MAGIC_LINK_TEMPLATE({ url }),
+  };
 
-	const result = await tryCatch(async () => {
-		log.debug(`Sending magic link email to ${email}`);
-		await transporter.sendMail(mailOptions);
-		log.debug(`Magic link email sent successfully to ${email}`);
-	});
+  const result = await tryCatch(async () => {
+    log.debug(`Sending magic link email to ${email}`);
+    await transporter.sendMail(mailOptions);
+    log.debug(`Magic link email sent successfully to ${email}`);
+  });
 
-	if (!result.isSuccess) {
-		log.error("Failed to send magic link email:", result.error);
-		throw new Error(`Failed to send magic link email: ${result.error.message}`);
-	}
+  if (!result.isSuccess) {
+    log.error("Failed to send magic link email:", result.error);
+    throw new Error(`Failed to send magic link email: ${result.error.message}`);
+  }
 }

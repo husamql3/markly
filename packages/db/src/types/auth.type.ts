@@ -1,3 +1,4 @@
-import type { user } from "../schema";
+import type { Session, User } from "../schema/auth";
 
-export type UserT = typeof user.$inferSelect;
+export type UserT = typeof User.$inferSelect;
+export type SessionT = typeof Session.$inferSelect;

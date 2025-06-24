@@ -14,19 +14,24 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(["development", "production", "test"])
       .default("development"),
-    PORT: z.string().default("8080"),
+    SERVER_PORT: z
+      .string()
+      .default("8080")
+      .transform((val) => Number.parseInt(val)),
     DATABASE_URL: z.url(),
 
     // BetterAuth
-    BETTER_AUTH_SECRET: z.string().min(1),
+    BETTER_AUTH_SECRET: z.string(),
 
     // OAuth
-    GOOGLE_CLIENT_ID: z.string().min(1),
-    GOOGLE_CLIENT_SECRET: z.string().min(1),
+    GOOGLE_CLIENT_ID: z.string(),
+    GOOGLE_CLIENT_SECRET: z.string(),
 
     // Email
-    SMTP_USER: z.email("Invalid email format"),
-    SMTP_PASSWORD: z.string().min(1),
+    SMTP_USER: z.email(),
+    SMTP_PASSWORD: z.string(),
   },
+  clientPrefix: "PUBLIC_",
+  client: {},
   runtimeEnv: process.env,
 });
