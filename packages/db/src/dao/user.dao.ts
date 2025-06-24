@@ -1,25 +1,30 @@
-import { type SQL, eq } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 
-import { db } from "../db";
-import { type User, user } from "../schema/auth";
+import type { UserT } from "../types";
 import { BaseDao } from "./base.dao";
+import { User } from "../schema";
+import { db } from "../db";
 
-export class UserDao extends BaseDao<User> {
-	protected table = user;
+export class UserDao extends BaseDao<UserT> {
+  protected table = User;
 
-	async getByEmail(email: string): Promise<User | undefined> {
-		const [foundUser] = await db
-			.select()
-			.from(user)
-			.where(eq(user.email, email))
-			.limit(1);
+  async getByEmail(email: string): Promise<UserT | undefined> {
+    const [foundUser] = await db
+      .select()
+      .from(User)
+      .where(eq(User.email, email))
+      .limit(1);
 
-		return foundUser as User | undefined;
-	}
+    return foundUser as UserT | undefined;
+  }
 
-	async findByUserId(id: string): Promise<User | undefined> {
-		const [foundUser] = await db.select().from(user).where(eq(user.id, id)).limit(1);
+  async findByUserId(id: string): Promise<UserT | undefined> {
+    const [foundUser] = await db
+      .select()
+      .from(User)
+      .where(eq(User.id, id))
+      .limit(1);
 
-		return foundUser as User | undefined;
-	}
+    return foundUser as UserT | undefined;
+  }
 }

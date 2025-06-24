@@ -1,4 +1,4 @@
-import type { collection } from "../schema/collection";
+import type { Collection } from "../schema/collection";
 
-export type CollectionT = typeof collection.$inferSelect;
-export type CollectionInsertT = typeof collection.$inferInsert;
+export type CollectionT = typeof Collection.$inferSelect;
+export type CollectionInsertT = typeof Collection.$inferInsert;
