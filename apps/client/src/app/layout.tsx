@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { ReactQueryProvider } from "@/providers/react-query-provider";
 import { cn } from "@/utils/cn";
 import "./globals.css";
+import { Toaster } from "@/ui/sonner";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -25,6 +26,7 @@ function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
     <html lang="en" className="dark">
       <body className={cn("root bg-zinc-950 text-zinc-100", poppins.className)}>
         <ReactQueryProvider>{children}</ReactQueryProvider>
+        <Toaster position="top-center" expand={true} />
       </body>
     </html>
   );

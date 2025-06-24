@@ -1,5 +1,6 @@
 "use client";
 
+import { toast } from "sonner";
 import { type SubmitHandler, useForm } from "react-hook-form";
 
 import { useAuth } from "@/stores/auth";
@@ -7,19 +8,21 @@ import { useAuth } from "@/stores/auth";
 import { Button } from "@/ui/button";
 import { Input } from "@/ui/input";
 import { Label } from "@/ui/label";
-import { log } from "@markly/utils";
 
 const Page = () => {
   const { register, handleSubmit } = useForm<{ email: string }>();
   const { loginWithMagicLink, error, isLoading } = useAuth();
 
-  const onSubmit: SubmitHandler<{ email: string }> = (data) => {
-    // console.log("data", data);
-    loginWithMagicLink(data.email);
+  const onSubmit: SubmitHandler<{ email: string }> = async (data) => {
+    const taostId = toast.loading("Sending magic link...");
+    await loginWithMagicLink(data.email);
 
     if (error) {
-      log.error("Error logging in:", error);
+      toast.error(String(error), { id: taostId });
+      return;
     }
+
+    toast.success("Login link sent!", { id: taostId });
   };
 
   return (

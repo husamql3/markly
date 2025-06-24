@@ -7,7 +7,7 @@ import { log } from "@markly/utils";
 export type AuthState = {
   user: SessionT | null;
   isLoading: boolean;
-  error: Error | null;
+  error: Error | string | null;
   fetchSession: () => Promise<void>;
   loginWithMagicLink: (email: string) => Promise<void>;
   signOut: () => Promise<void>;
@@ -58,22 +58,14 @@ export const useAuth = create<AuthState>((set) => ({
   loginWithMagicLink: async (email: string) => {
     set({ isLoading: true });
     try {
-      const { error: e } = await authClient.signIn.magicLink({
+      await authClient.signIn.magicLink({
         email,
         callBackUrl: "/",
       });
-      if (e) {
-        log.error("LOGIN WITH MAGIC LINK ERROR:", e);
-        set({
-          error: e instanceof Error ? e : new Error("Login failed"),
-          isLoading: false,
-        });
-        return;
-      }
 
-      const { data } = await authClient.getSession();
+      const { data, error } = await authClient.getSession();
       if (!data) {
-        set({ user: null, isLoading: false });
+        set({ user: null, isLoading: false, error: error.message });
         return;
       }
 
