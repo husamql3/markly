@@ -11,7 +11,7 @@ import { log } from "@markly/utils";
 
 const Page = () => {
   const { register, handleSubmit } = useForm<{ email: string }>();
-  const { loginWithMagicLink, error } = useAuth();
+  const { loginWithMagicLink, error, isLoading } = useAuth();
 
   const onSubmit: SubmitHandler<{ email: string }> = (data) => {
     // console.log("data", data);
@@ -65,7 +65,7 @@ const Page = () => {
                 {...register("email", { required: true })}
               />
             </div>
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full" disabled={isLoading}>
               Login
             </Button>
           </form>

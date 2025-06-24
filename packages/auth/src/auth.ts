@@ -2,10 +2,9 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { magicLink, oAuthProxy } from "better-auth/plugins";
 
-import { db } from "@markly/db";
-import { Account, Session, User, Verification } from "@markly/db/src/schema";
+import { db, Account, Session, User, Verification } from "@markly/db";
 import { env } from "@markly/lib";
-// import { sendMagicLinkEmail } from "@markly/lib/src/email";
+import { sendMagicLinkEmail } from "@markly/lib/src/email";
 import {
   CLIENT_BASE_URL,
   GOOGLE_CALLBACK_PATH,
@@ -23,10 +22,10 @@ export const auth = betterAuth({
   database: drizzleAdapter(db, {
     provider: "pg",
     schema: {
-      User,
-      Session,
-      Account,
-      Verification,
+      user: User,
+      session: Session,
+      account: Account,
+      verification: Verification,
     },
   }),
   socialProviders: {
@@ -44,9 +43,10 @@ export const auth = betterAuth({
   plugins: [
     oAuthProxy(),
     magicLink({
-      sendMagicLink: ({ email, url }) => {
+      sendMagicLink: async ({ email, url }) => {
+        // url: http://localhost:8080/api/auth/magic-link/verify?token=qdezEaaUsWdUXptXvBVYOaieVKPSUFlW&callbackURL=/
         log.debug(`Initiating magic link flow for ${email}, ${url}`);
-        // await sendMagicLinkEmail({ email, url });
+        await sendMagicLinkEmail({ email, url });
         log.debug(`Magic link flow completed for ${email}`);
       },
       expiresIn: MAGIC_LINK_EXPIRY,
