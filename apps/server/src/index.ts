@@ -17,10 +17,6 @@ app.get("/", (c) => {
   return c.text("Hello Hono!");
 });
 
-app.on(["POST", "GET"], "/api/auth/*", (c) => {
-  return auth.handler(c.req.raw);
-});
-
 app.use(
   "/api/auth/*",
   cors({
