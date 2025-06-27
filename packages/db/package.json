@@ -30,7 +30,6 @@
     "postgres": "^3.4.7"
   },
   "devDependencies": {
-    "@markly/typescript-config": "workspace:*",
     "@types/node": "^20.19.0",
     "@types/pg": "^8.15.4",
     "drizzle-kit": "^0.31.1",

@@ -8,17 +8,26 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "check": "biome check --write .",
     "format": "biome format --write .",
-    "typecheck": "tsc --noEmit ."
+    "typecheck": "tsc --noEmit .",
+    "generate": "npx drizzle-kit generate",
+    "migrate": "npx drizzle-kit generate",
+    "studio": "drizzle-kit studio",
+    "drop": "tsx src/db/drop.ts",
+    "reset": "pnpm drop && pnpm migrate"
   },
   "dependencies": {
     "@markly/lib": "workspace:*",
-    "@markly/utils": "workspace:*",
-    "@markly/auth": "workspace:*",
     "@hono/node-server": "^1.14.4",
-    "hono": "^4.8.2"
+    "hono": "^4.8.2",
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.44.2",
+    "pg": "^8.16.0",
+    "postgres": "^3.4.7",
+    "better-auth": "^1.2.8"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
+    "@types/pg": "^8.15.4",
     "tsx": "^4.7.1",
     "typescript": "^5.8.3"
   }

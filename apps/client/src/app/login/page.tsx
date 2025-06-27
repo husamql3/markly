@@ -14,6 +14,8 @@ const Page = () => {
   const { loginWithMagicLink, error, isLoading } = useAuth();
 
   const onSubmit: SubmitHandler<{ email: string }> = async (data) => {
+    console.log(data.email);
+
     const taostId = toast.loading("Sending magic link...");
     await loginWithMagicLink(data.email);
 

@@ -53,3 +53,4 @@
 - use [ultracite](https://www.ultracite.ai/introduction)
 - use [releases](https://github.com/haydenbleasel/ultracite/blob/main/.github/workflows/push.yaml)
 - skip ci [here](https://github.com/haydenbleasel/ultracite/blob/main/.github/workflows/push.yaml)
+- server testing

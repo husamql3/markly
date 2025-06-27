@@ -2,7 +2,7 @@ import { create } from "zustand";
 
 import { authClient } from "@markly/auth";
 import type { SessionT } from "@markly/db";
-import { log } from "@markly/utils";
+import { CLIENT_BASE_URL, log } from "@markly/utils";
 
 export type AuthState = {
   user: SessionT | null;
@@ -58,25 +58,19 @@ export const useAuth = create<AuthState>((set) => ({
   loginWithMagicLink: async (email: string) => {
     set({ isLoading: true });
     try {
-      await authClient.signIn.magicLink({
+      const { error: magicLinkError } = await authClient.signIn.magicLink({
         email,
-        callBackUrl: "/",
+        callbackURL: `${CLIENT_BASE_URL}/`,
       });
-
-      const { data, error } = await authClient.getSession();
-      if (!data) {
-        set({ user: null, isLoading: false, error: error.message });
+      if (magicLinkError) {
+        log.error("MAGIC LINK SEND ERROR", magicLinkError);
+        set({
+          user: null,
+          isLoading: false,
+          error: magicLinkError.message || "Failed to send magic link",
+        });
         return;
       }
-
-      const session = data.session
-        ? {
-            ...data.session,
-            ipAddress: data.session.ipAddress ?? null,
-            userAgent: data.session.userAgent ?? null,
-          }
-        : null;
-      set({ user: session, isLoading: false, error: null });
     } catch (e) {
       log.error("LOGIN WITH MAGIC LINK ERROR:", e);
       set({

@@ -17,13 +17,11 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@markly/typescript-config": "workspace:^",
     "@types/node": "^20.11.24",
     "tsx": "*",
     "typescript": "5.5.4"
   },
   "dependencies": {
-    "@markly/utils": "workspace:*",
     "@t3-oss/env-core": "^0.13.8",
     "@types/nodemailer": "^6.4.17",
     "dotenv": "^16.5.0",
