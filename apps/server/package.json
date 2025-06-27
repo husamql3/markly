@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "@markly/server",
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
@@ -16,18 +16,19 @@
     "reset": "pnpm drop && pnpm migrate"
   },
   "dependencies": {
-    "@markly/lib": "workspace:*",
     "@hono/node-server": "^1.14.4",
-    "hono": "^4.8.2",
+    "@markly/lib": "workspace:*",
+    "better-auth": "^1.2.8",
     "dotenv": "^16.5.0",
     "drizzle-orm": "^0.44.2",
+    "hono": "^4.8.2",
     "pg": "^8.16.0",
-    "postgres": "^3.4.7",
-    "better-auth": "^1.2.8"
+    "postgres": "^3.4.7"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
     "@types/pg": "^8.15.4",
+    "drizzle-kit": "^0.31.4",
     "tsx": "^4.7.1",
     "typescript": "^5.8.3"
   }

@@ -7,11 +7,12 @@
     "build": "next build",
     "start": "next start",
     "check": "biome check --write .",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf build",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next*",
     "format": "biome format --write ."
   },
   "dependencies": {
     "@markly/lib": "workspace:*",
+    "@markly/server": "workspace:*",
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@tanstack/react-query": "^5.81.2",

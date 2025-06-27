@@ -1,2 +1,3 @@
 export { env } from "./env.js";
-export { transporter } from "./nodemailer.js";
+export { sendEmail } from "./nodemailer.js";
+export * from "./constants.js";

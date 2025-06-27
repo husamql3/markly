@@ -2,9 +2,10 @@ import { serve } from "@hono/node-server";
 import { cors } from "hono/cors";
 import { Hono } from "hono";
 
-import { CLIENT_BASE_URL, log } from "@markly/utils";
-import { auth } from "@markly/auth/server";
+import { auth } from "@/auth/server";
+// import { log } from "@markly/lib/logger";
 import { env } from "@markly/lib";
+import { CLIENT_BASE_URL } from "@markly/lib/src/constants";
 
 export type AppType = {
   user: typeof auth.$Infer.Session.user | null;
@@ -61,7 +62,7 @@ const server = serve(
     port: env.SERVER_PORT,
   },
   (info) => {
-    log.debug(`http://localhost:${info.port}`);
+    // log.debug(`http://localhost:${info.port}`);
   },
 );
 

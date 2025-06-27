@@ -1,13 +1,16 @@
 import { type NextRequest, NextResponse } from "next/server";
 
-import { auth } from "@markly/auth/server";
+import { auth } from "@markly/server/src/auth/server";
+import { log } from "@markly/lib/src/logger";
 
 export async function middleware(request: NextRequest) {
+  log.debug("[middleware]", request.url);
+
   try {
-    const { user } = await auth.api.getSession({
+    const data = await auth.api.getSession({
       headers: request.headers,
     });
-    if (!user) {
+    if (!data?.session) {
       return NextResponse.redirect(new URL("/login", request.url));
     }
 
@@ -18,4 +21,6 @@ export async function middleware(request: NextRequest) {
   }
 }
 
-export const config = {};
+export const config = {
+  runtime: "nodejs",
+};

@@ -19,7 +19,8 @@
   "devDependencies": {
     "@types/node": "^20.11.24",
     "tsx": "*",
-    "typescript": "5.5.4"
+    "typescript": "5.5.4",
+    "chalk": "^5.4.1"
   },
   "dependencies": {
     "@t3-oss/env-core": "^0.13.8",
