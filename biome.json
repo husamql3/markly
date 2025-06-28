@@ -1,8 +1,6 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
+  "$schema": "https://biomejs.dev/schemas/2.0.5/schema.json",
+  "extends": ["ultracite"],
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
@@ -21,18 +19,15 @@
         "noSparseArray": "warn",
         "noUnsafeNegation": "warn",
         "useAwait": "warn",
-        "useNamespaceKeyword": "warn",
-        "useValidTypeof": "warn"
+        "useNamespaceKeyword": "warn"
       },
       "style": {
         "noNonNullAssertion": "off",
-        "noVar": "error",
         "useAsConstAssertion": "warn",
         "useBlockStatements": "warn",
         "useCollapsedElseIf": "warn",
         "useConst": "error",
-        "useFragmentSyntax": "warn",
-        "useWhile": "warn"
+        "useFragmentSyntax": "warn"
       },
       "performance": {
         "noDelete": "warn"
@@ -40,7 +35,6 @@
       "correctness": {
         "noEmptyPattern": "error",
         "noInvalidConstructorSuper": "error",
-        "noNewSymbol": "error",
         "noNonoctalDecimalEscape": "error",
         "noSwitchDeclarations": "error",
         "noUndeclaredVariables": "error",
@@ -97,16 +91,6 @@
     "defaultBranch": "main"
   },
   "files": {
-    "ignoreUnknown": false,
-    "ignore": [
-      "node_modules/",
-      "build/",
-      ".next/",
-      "dist/",
-      ".turbo",
-      ".react-router",
-      "__tests__",
-      "__mocks__"
-    ]
+    "ignoreUnknown": false
   }
 }
