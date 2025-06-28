@@ -2,7 +2,7 @@ import { drizzle } from "drizzle-orm/postgres-js";
 import { sql } from "drizzle-orm";
 import postgres from "postgres";
 
-import { env } from "@markly/lib";
+import { env } from "@markly/lib/server";
 
 export const migrationClient = postgres(env.DATABASE_URL, { max: 1 });
 

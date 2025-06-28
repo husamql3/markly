@@ -1,28 +1,28 @@
 "use client";
 
 import { toast } from "sonner";
-import { type SubmitHandler, useForm } from "react-hook-form";
 
-// import { useAuth } from "@/stores/auth";
+import { useForm, type SubmitHandler } from "react-hook-form";
+
+import { useAuth } from "@/stores/auth";
 
 import { Button } from "@/ui/button";
 import { Input } from "@/ui/input";
 import { Label } from "@/ui/label";
+// import { Spinner } from "@/ui/spinner";
 
 const Page = () => {
   const { register, handleSubmit } = useForm<{ email: string }>();
-  // const { loginWithMagicLink, error, isLoading } = useAuth();
+  const { loginWithMagicLink, error, isLoading } = useAuth();
 
   const onSubmit: SubmitHandler<{ email: string }> = async (data) => {
-    console.log(data.email);
-
     const taostId = toast.loading("Sending magic link...");
-    // await loginWithMagicLink(data.email);
-    //
-    // if (error) {
-    // toast.error(String(error), { id: taostId });
-    // return;
-    // }
+    await loginWithMagicLink(data.email);
+
+    if (error) {
+      toast.error(String(error), { id: taostId });
+      return;
+    }
 
     toast.success("Login link sent!", { id: taostId });
   };
@@ -70,11 +70,7 @@ const Page = () => {
                 {...register("email", { required: true })}
               />
             </div>
-            <Button
-              type="submit"
-              className="w-full"
-              // disabled={isLoading}
-            >
+            <Button type="submit" className="w-full" disabled={isLoading}>
               Login
             </Button>
           </form>

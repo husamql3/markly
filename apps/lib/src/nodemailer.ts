@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 import type { SendMailOptions } from "nodemailer";
-import { env } from "./env.js";
-import { tryCatch } from "./try-catch.js";
+import { env } from "./env";
+import { tryCatch } from "./try-catch";
 
 /**
  * Configured Nodemailer transporter for sending emails via Gmail SMTP.

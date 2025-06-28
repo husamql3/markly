@@ -4,7 +4,7 @@ import { magicLink, oAuthProxy } from "better-auth/plugins";
 
 import { db } from "../db";
 import { Account, Session, User, Verification } from "../db/schema";
-import { env } from "@markly/lib";
+import { env } from "@markly/lib/server";
 import {
   CLIENT_BASE_URL,
   GOOGLE_CALLBACK_PATH,

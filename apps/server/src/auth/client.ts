@@ -4,8 +4,8 @@ import {
   magicLinkClient,
 } from "better-auth/client/plugins";
 
-import type { auth } from "@/auth/server";
-import { SERVER_BASE_URL } from "@markly/lib/src/constants";
+import type { auth } from "../auth/server";
+import { SERVER_BASE_URL } from "@markly/lib";
 
 /**
  * Better Auth client configuration for browser use

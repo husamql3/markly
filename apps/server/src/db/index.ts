@@ -1,7 +1,7 @@
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 
-import { env } from "@markly/lib";
+import { env } from "@markly/lib/server";
 import * as schema from "../db/schema";
 
 export const queryClient = postgres(env.DATABASE_URL);
