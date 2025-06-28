@@ -12,7 +12,7 @@ import {
   SERVER_BASE_URL,
 } from "@/utils/constants";
 import { log } from "@/utils/logger";
-// import { sendMagicLinkEmail } from "@/utils/email/sendMagicEmail";
+import { sendMagicLinkEmail } from "@/utils/email/sendMagicEmail";
 
 /**
  * Initialize the authentication service.
@@ -44,8 +44,8 @@ export const auth = betterAuth({
   plugins: [
     oAuthProxy(),
     magicLink({
-      sendMagicLink: ({ email, url }) => {
-        // await sendMagicLinkEmail({ email, url });
+      sendMagicLink: async ({ email, url }) => {
+        await sendMagicLinkEmail({ email, url });
         log.debug(`Magic link flow completed for ${email}, ${url}`);
       },
       expiresIn: MAGIC_LINK_EXPIRY,
