@@ -11,6 +11,9 @@ export const env = createEnv({
     // OAuth
     GOOGLE_CLIENT_ID: z.string(),
     GOOGLE_CLIENT_SECRET: z.string(),
+    X_CLIENT_ID: z.string(),
+    X_CLIENT_SECRET: z.string(),
+    X_BEARER_TOKEN: z.string(),
 
     // BetterAuth
     BETTER_AUTH_SECRET: z.string(),

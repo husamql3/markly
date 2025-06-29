@@ -1,6 +1,7 @@
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { magicLink, oAuthProxy } from "better-auth/plugins";
+import { nextCookies } from "better-auth/next-js";
 
 import { db } from "@/db";
 import { Account, Session, User, Verification } from "@/db/schema";
@@ -35,6 +36,12 @@ export const auth = betterAuth({
       clientSecret: env.GOOGLE_CLIENT_SECRET,
       // redirectURI: `${SERVER_BASE_URL}${GOOGLE_CALLBACK_PATH}`,
     },
+    twitter: {
+      clientId: env.X_CLIENT_ID,
+      clientSecret: env.X_CLIENT_SECRET,
+      bearerToken: env.X_BEARER_TOKEN,
+      scope: ["bookmark.read"],
+    },
   },
   trustedOrigins: [CLIENT_BASE_URL],
   session: {
@@ -50,5 +57,6 @@ export const auth = betterAuth({
       },
       expiresIn: MAGIC_LINK_EXPIRY,
     }),
+    nextCookies(),
   ],
 });

@@ -1,32 +1,19 @@
-// import { betterAuth } from "better-auth";
 import { NextResponse, type NextRequest } from "next/server";
-import { log } from "./utils/logger";
-
-// const authMiddleware = betterAuth({
-//   baseURL: process.env.BETTER_AUTH_URL || "http://localhost:3000/api/auth",
-//   secret: process.env.BETTER_AUTH_SECRET!,
-// });
+import { getSessionCookie } from "better-auth/cookies";
 
 export function middleware(request: NextRequest) {
-  try {
-    const { pathname } = new URL(request.url);
-    log.debug(pathname);
+  const { pathname } = request.nextUrl;
 
-    // Check for session cookie (better-auth typically uses 'better-auth.session_token')
-    const sessionToken = request.cookies.get("better-auth.session_token");
-    const isAuthenticated = !!sessionToken;
-
-    log.debug("IS_AUTHENTICATED", isAuthenticated);
-
-    if (pathname.startsWith("/login") && isAuthenticated) {
-      return NextResponse.redirect(new URL("/", request.url));
-    }
-
-    return NextResponse.next();
-  } catch (error) {
-    log.error("MIDDLEWARE_ERROR", error);
-    return NextResponse.error();
+  const sessionCookie = getSessionCookie(request);
+  if (!sessionCookie) {
+    return NextResponse.redirect(new URL("/login", request.url));
   }
+
+  if (sessionCookie && pathname === "/login") {
+    return NextResponse.redirect(new URL("/", request.url));
+  }
+
+  return NextResponse.next();
 }
 
 export const config = {

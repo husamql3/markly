@@ -13,7 +13,8 @@
     "db:generate": "npx drizzle-kit generate",
     "db:migrate": "npx drizzle-kit generate",
     "db:studio": "drizzle-kit studio",
-    "auth:generate": "npx @better-auth/cli generate --output ./src/db/schema/auth.ts --config ./src/auth/server.ts --y"
+    "auth:generate": "npx @better-auth/cli generate --output ./src/db/schema/auth.ts --config ./src/auth/server.ts --y",
+    "clean": "rm -rf node_modules .next*"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.7",
