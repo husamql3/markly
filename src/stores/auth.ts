@@ -3,7 +3,7 @@ import { create } from "zustand";
 import type { SessionT } from "@/types";
 import { authClient } from "@/auth/client";
 import { log } from "@/utils/logger";
-import { CLIENT_BASE_URL } from "@/utils/constants";
+import { env } from "@/env";
 
 export type AuthState = {
   user: SessionT | null;
@@ -59,7 +59,7 @@ export const useAuth = create<AuthState>((set) => ({
     try {
       const { error: magicLinkError } = await authClient.signIn.magicLink({
         email,
-        callbackURL: `${CLIENT_BASE_URL}/`,
+        callbackURL: `${env.PUBLIC_CLIENT_BASE_URL}/`,
       });
       if (magicLinkError) {
         log.error("MAGIC LINK SEND ERROR", magicLinkError);
