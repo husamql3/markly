@@ -1,5 +1,15 @@
 "use client";
 
+// const Page = () => {
+//   return (
+//     <div>
+//       <h1>Welcome!</h1>
+//     </div>
+//   );
+// };
+
+// export default Page;
+
 import { authClient } from "@/auth/client";
 import { Button } from "@/ui/button";
 import React, { useEffect, useState } from "react";
@@ -78,15 +88,19 @@ const Page = () => {
       {sessionData ? (
         <div className="w-full max-w-4xl">
           <div className="mb-8">
-            <h1 className="text-2xl font-bold mb-4">Welcome!</h1>
+            <h1 className="mb-4 text-2xl font-bold">Welcome!</h1>
             <p className="mb-4">Email: {sessionData.user.email}</p>
-            
+
             {debugInfo && (
-              <div className="mb-4 p-4 bg-blue-50 rounded-lg">
-                <h3 className="font-semibold mb-2">Debug Info:</h3>
+              <div className="mb-4 rounded-lg bg-blue-50 p-4">
+                <h3 className="mb-2 font-semibold">Debug Info:</h3>
                 <p>Has Twitter Account: {debugInfo.hasAccount ? "✅" : "❌"}</p>
-                <p>Has Access Token: {debugInfo.hasAccessToken ? "✅" : "❌"}</p>
-                <p>Has Refresh Token: {debugInfo.hasRefreshToken ? "✅" : "❌"}</p>
+                <p>
+                  Has Access Token: {debugInfo.hasAccessToken ? "✅" : "❌"}
+                </p>
+                <p>
+                  Has Refresh Token: {debugInfo.hasRefreshToken ? "✅" : "❌"}
+                </p>
                 <p>Scope: {debugInfo.scope || "None"}</p>
               </div>
             )}
@@ -100,7 +114,7 @@ const Page = () => {
             </div>
 
             {error && (
-              <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+              <div className="mt-4 rounded-lg border border-red-200 bg-red-50 p-4">
                 <p className="text-red-700">Error: {error}</p>
               </div>
             )}
@@ -108,8 +122,10 @@ const Page = () => {
 
           {bookmarks && (
             <div className="mt-8">
-              <h2 className="text-xl font-semibold mb-4">Your Twitter Bookmarks</h2>
-              <div className="bg-gray-100 p-4 rounded-lg overflow-auto max-h-96">
+              <h2 className="mb-4 text-xl font-semibold">
+                Your Twitter Bookmarks
+              </h2>
+              <div className="max-h-96 overflow-auto rounded-lg bg-gray-100 p-4">
                 <pre className="text-sm">
                   {JSON.stringify(bookmarks, null, 2)}
                 </pre>

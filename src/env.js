@@ -25,6 +25,8 @@ export const env = createEnv({
     // Utils
     CLIENT_BASE_URL: z.url(),
     SERVER_BASE_URL: z.url(),
+    PUBLIC_CLIENT_BASE_URL: z.url(),
+    PUBLIC_SERVER_BASE_URL: z.url(),
   },
   client: {},
   runtimeEnv: {
@@ -40,6 +42,8 @@ export const env = createEnv({
     SMTP_PASSWORD: process.env.SMTP_PASSWORD,
     CLIENT_BASE_URL: process.env.CLIENT_BASE_URL,
     SERVER_BASE_URL: process.env.SERVER_BASE_URL,
+    PUBLIC_CLIENT_BASE_URL: process.env.PUBLIC_CLIENT_BASE_URL,
+    PUBLIC_SERVER_BASE_URL: process.env.PUBLIC_SERVER_BASE_URL,
   },
   skipValidation: process.env.NODE_ENV !== "development",
 });
