@@ -34,13 +34,17 @@ export const auth = betterAuth({
     google: {
       clientId: env.GOOGLE_CLIENT_ID,
       clientSecret: env.GOOGLE_CLIENT_SECRET,
-      // redirectURI: `${SERVER_BASE_URL}${GOOGLE_CALLBACK_PATH}`,
     },
     twitter: {
-      clientId: env.X_CLIENT_ID,
-      clientSecret: env.X_CLIENT_SECRET,
-      bearerToken: env.X_BEARER_TOKEN,
-      scope: ["bookmark.read"],
+      clientId: env.TWITTER_CLIENT_ID,
+      clientSecret: env.TWITTER_CLIENT_SECRET,
+      version: "2.0",
+      scope: ["bookmark.read", "tweet.read", "users.read"],
+      authorization: {
+        params: {
+          scope: "bookmark.read tweet.read users.read offline.access",
+        },
+      },
     },
   },
   trustedOrigins: [CLIENT_BASE_URL],
