@@ -1,22 +1,22 @@
 {
-  "name": "server",
-  "type": "module",
-  "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "build": "tsc",
-    "clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo",
-    "start": "node dist/index.js",
-    "typecheck": "tsc --noEmit .",
-    "check": "biome check --write .",
-    "format": "biome format --write ."
-  },
-  "dependencies": {
-    "@hono/node-server": "^1.15.0",
-    "hono": "^4.8.3"
-  },
-  "devDependencies": {
-    "@types/node": "^20.11.17",
-    "tsx": "^4.7.1",
-    "typescript": "^5.8.3"
-  }
+	"name": "server",
+	"type": "module",
+	"scripts": {
+		"dev": "tsx watch src/index.ts",
+		"build": "tsc",
+		"clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo",
+		"start": "node dist/index.js",
+		"typecheck": "tsc --noEmit -p tsconfig.json",
+		"check": "biome check --write .",
+		"format": "biome format --write ."
+	},
+	"dependencies": {
+		"@hono/node-server": "^1.15.0",
+		"hono": "^4.8.3"
+	},
+	"devDependencies": {
+		"@types/node": "^20.11.17",
+		"tsx": "^4.7.1",
+		"typescript": "^5.8.3"
+	}
 }

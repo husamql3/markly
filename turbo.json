@@ -26,6 +26,10 @@
     "check": {
       "cache": false,
       "outputs": []
+    },
+    "typecheck": {
+      "cache": false,
+      "outputs": []
     }
   }
 }
