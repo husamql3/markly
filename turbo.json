@@ -18,6 +18,14 @@
     },
     "clean": {
       "cache": false
+    },
+    "format": {
+      "cache": false,
+      "outputs": []
+    },
+    "check": {
+      "cache": false,
+      "outputs": []
     }
   }
 }

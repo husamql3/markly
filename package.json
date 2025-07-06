@@ -16,6 +16,8 @@
     "lint": "turbo run lint"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "ultracite": "5.0.25",
     "turbo": "^2.5.4"
   },
   "keywords": [],

@@ -8,9 +8,8 @@
     "clean": "rm -rf build && rm -rf node_modules && rm -rf .turbo",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
-    "check": "",
-    "format": "",
-    "lint": ""
+    "check": "biome check --write .",
+    "format": "biome format --write ."
   },
   "dependencies": {
     "@react-router/node": "^7.5.3",

@@ -6,10 +6,9 @@
     "build": "tsc",
     "clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo",
     "start": "node dist/index.js",
-    "typecheck": "",
-    "check": "",
-    "format": "",
-    "lint": ""
+    "typecheck": "tsc --noEmit .",
+    "check": "biome check --write .",
+    "format": "biome format --write ."
   },
   "dependencies": {
     "@hono/node-server": "^1.15.0",

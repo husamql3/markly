@@ -1,0 +1,96 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
+  "extends": ["ultracite"],
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "tab",
+    "indentWidth": 2,
+    "lineWidth": 90,
+    "lineEnding": "lf"
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noExplicitAny": "warn",
+        "noDebugger": "warn",
+        "noSparseArray": "warn",
+        "noUnsafeNegation": "warn",
+        "useAwait": "warn",
+        "useNamespaceKeyword": "warn"
+      },
+      "style": {
+        "noNonNullAssertion": "off",
+        "useAsConstAssertion": "warn",
+        "useBlockStatements": "warn",
+        "useCollapsedElseIf": "warn",
+        "useConst": "error",
+        "useFragmentSyntax": "warn"
+      },
+      "performance": {
+        "noDelete": "warn"
+      },
+      "correctness": {
+        "noEmptyPattern": "error",
+        "noInvalidConstructorSuper": "error",
+        "noNonoctalDecimalEscape": "error",
+        "noSwitchDeclarations": "error",
+        "noUndeclaredVariables": "error",
+        "noUnreachableSuper": "error",
+        "noUnsafeFinally": "error",
+        "noUnsafeOptionalChaining": "error",
+        "useValidForDirection": "warn",
+        "useYield": "error"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "warn",
+        "noGlobalEval": "warn"
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "level": "off",
+          "fix": "unsafe",
+          "options": {
+            "functions": ["cn"],
+            "attributes": ["className", "class"]
+          }
+        }
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double",
+      "indentStyle": "tab",
+      "semicolons": "always",
+      "arrowParentheses": "always",
+      "bracketSameLine": true,
+      "bracketSpacing": true,
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "all",
+      "lineEnding": "lf",
+      "attributePosition": "multiline"
+    }
+  },
+  "json": {
+    "formatter": {
+      "trailingCommas": "none"
+    },
+    "parser": {
+      "allowComments": true,
+      "allowTrailingCommas": true
+    }
+  },
+  "vcs": {
+    "enabled": false,
+    "clientKind": "git",
+    "useIgnoreFile": false,
+    "defaultBranch": "main"
+  },
+  "files": {
+    "ignoreUnknown": false
+  }
+}
