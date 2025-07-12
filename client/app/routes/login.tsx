@@ -1,9 +1,12 @@
+import { useState, type FormEvent } from "react";
+
 import type { Route } from "./+types/home";
 
 import { FlickeringGrid } from "@/components/flickering-grid";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { authClient } from "@/lib/auth";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -15,6 +18,13 @@ export function meta({}: Route.MetaArgs) {
 // https://21st.dev/aghasisahakyan1/sign-in-flow-1/default
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+
+  const handleEmailLogin = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await authClient.signIn.magicLink({ email });
+  };
+
   return (
     <div className="flex h-svh w-full items-center justify-center">
       <FlickeringGrid
@@ -52,7 +62,7 @@ export default function Login() {
             </span>
           </div>
 
-          <form className="flex flex-col gap-6">
+          <form className="flex flex-col gap-6" onSubmit={handleEmailLogin}>
             <div className="grid gap-3">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -61,6 +71,8 @@ export default function Login() {
                 placeholder="m@example.com"
                 required
                 autoComplete="off"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <Button type="submit" className="w-full">
