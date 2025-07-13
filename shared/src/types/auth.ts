@@ -1,9 +1,4 @@
-import type {
-  user,
-  session,
-  account,
-  verification,
-} from "server/dist/db/schema/auth";
+import type { account, session, user, verification } from "server/dist/db/schema/auth";
 
 export type User = typeof user.$inferSelect;
 export type Session = typeof session.$inferSelect;

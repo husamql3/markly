@@ -5,20 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-<<<<<<< HEAD
-      "when": 1752383245685,
-      "tag": "0000_boring_shaman",
-=======
-      "when": 1751797220916,
-      "tag": "0000_sharp_captain_midlands",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1751797351992,
-      "tag": "0001_cooing_changeling",
->>>>>>> bhvr
+      "when": 1752388991130,
+      "tag": "0000_brainy_major_mapleleaf",
       "breakpoints": true
     }
   ]
