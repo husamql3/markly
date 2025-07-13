@@ -44,7 +44,7 @@ export default function Login() {
 
   const handleGoogleSignIn = async () => {
     const toastId = toast.loading("Signing in with Google...");
-    
+
     try {
       await signInWithGoogle();
     } catch (error) {

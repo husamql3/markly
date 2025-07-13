@@ -1,10 +1,6 @@
 {
-<<<<<<< HEAD
-  "id": "c4d1cf97-6959-46e3-97d6-5bfd5bfeea04",
-=======
-  "id": "c87d83dc-a9af-4579-bf91-153fa87443a6",
->>>>>>> bhvr
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "af1ee26f-aaf4-40aa-a550-3422933c3fbb",
+  "prevId": "c87d83dc-a9af-4579-bf91-153fa87443a6",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -307,7 +303,6 @@
       "policies": {},
       "checkConstraints": {},
       "isRLSEnabled": false
-<<<<<<< HEAD
     },
     "public.bookmark": {
       "name": "bookmark",
@@ -523,11 +518,6 @@
       ]
     }
   },
-=======
-    }
-  },
-  "enums": {},
->>>>>>> bhvr
   "schemas": {},
   "sequences": {},
   "roles": {},

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 
@@ -38,11 +39,18 @@ app.use("*", async (c, next) => {
   c.set("session", session.session);
   return next();
 });
+=======
+import { serve } from "@hono/node-server";
+import { Hono } from "hono";
+
+const app = new Hono();
+>>>>>>> bhvr
 
 app.get("/", (c) => {
   return c.text("Hello Hono!");
 });
 
+<<<<<<< HEAD
 app.get("/hello", async (c) => {
   const data: ApiResponse = {
     message: "Hello BHVR!",
@@ -53,3 +61,14 @@ app.get("/hello", async (c) => {
 });
 
 export default app;
+=======
+serve(
+  {
+    fetch: app.fetch,
+    port: 3000,
+  },
+  (info) => {
+    console.log(`Server is running on http://localhost:${info.port}`);
+  },
+);
+>>>>>>> bhvr

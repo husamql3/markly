@@ -13,9 +13,15 @@
     "moduleResolution": "bundler",
     "jsx": "react-jsx",
     "rootDirs": [".", "./.react-router/types"],
+<<<<<<< HEAD
     "baseUrl": ".",
     "paths": {
       "@/*": ["./app/*"]
+=======
+    "baseUrl": "./app",
+    "paths": {
+      "@/*": ["./*"]
+>>>>>>> bhvr
     },
     "esModuleInterop": true,
     "verbatimModuleSyntax": true,
